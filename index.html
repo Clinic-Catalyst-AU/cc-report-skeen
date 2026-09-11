@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SKEEN Clinic - Clinic Catalyst Growth Plan</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #0A2A28;
+  --dark-alt: #0D3D38;
+  --teal: #00B4A0;
+  --teal-bright: #00D4BC;
+  --peach: #E8A87C;
+  --peach-light: #F5C7A0;
+  --white: #FFFFFF;
+  --text-faint: rgba(255,255,255,0.6);
+  --text-mid: rgba(255,255,255,0.85);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Open Sans',sans-serif; background:#000; color:var(--white); overflow:hidden; }
+.deck { height:100vh; overflow-y:auto; scroll-snap-type:y mandatory; }
+.slide { height:100vh; scroll-snap-align:start; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.slide-img { padding:0; }
+.slide-img img { width:100%; height:100%; object-fit:contain; background:#000; }
+.slide-html { padding:3rem 4rem; background:var(--dark); }
+.slide-html.alt { background:var(--dark-alt); }
+.slide-html.teal-bg { background:linear-gradient(135deg, #073B36 0%, #0A2A28 100%); }
+.slide-html { background:linear-gradient(160deg, #0A2A28 0%, #0E3D3A 40%, #0A2A28 100%); }
+.slide-html.alt { background:linear-gradient(160deg, #0D3D38 0%, #0A2A28 50%, #0D3D38 100%); }
+.inner { max-width:1100px; width:100%; position:relative; z-index:2; }
+.dot-overlay { position:absolute; inset:0; opacity:0.05; background-image:radial-gradient(circle,var(--teal) 1px,transparent 1px); background-size:50px 50px; pointer-events:none; }
+.glow { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(0,180,160,0.12) 0%,transparent 70%); pointer-events:none; }
+.glow-tl { top:-200px; left:-200px; }
+.glow-br { bottom:-200px; right:-200px; }
+.label { font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-bright); margin-bottom:0.75rem; }
+.label-peach { color:var(--peach); }
+h2 { font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2.2rem); font-weight:800; text-transform:uppercase; line-height:1.1; margin-bottom:1rem; }
+h3 { font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:700; text-transform:uppercase; margin-bottom:0.6rem; }
+.teal { color:var(--teal-bright); }
+.peach { color:var(--peach); }
+p { font-size:0.9rem; color:var(--text-mid); font-weight:300; line-height:1.8; }
+.split { display:grid; grid-template-columns:2fr 3fr; gap:3rem; align-items:center; }
+.split-even { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; align-items:center; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+.mt-1 { margin-top:1rem; }
+.mt-2 { margin-top:2rem; }
+.task-num { font-family:'Montserrat',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--peach); display:inline-block; border:1px solid rgba(232,168,124,0.3); padding:0.25rem 0.7rem; border-radius:4px; margin-bottom:0.8rem; }
+.quote { border-left:3px solid var(--peach); padding:0.8rem 1.2rem; margin-bottom:1.5rem; background:rgba(232,168,124,0.04); border-radius:0 6px 6px 0; }
+.quote p { font-style:italic; color:var(--peach-light); font-size:1rem; line-height:1.5; }
+.browser-frame { border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); background:#111; }
+.browser-bar { height:28px; background:#1a1a1a; display:flex; align-items:center; padding:0 10px; gap:6px; }
+.browser-dot { width:8px; height:8px; border-radius:50%; background:#333; }
+.browser-dot.r { background:#ff5f56; }
+.browser-dot.y { background:#ffbd2e; }
+.browser-dot.g { background:#27c93f; }
+.browser-frame img { width:100%; display:block; }
+.scroll-arrow { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); text-align:center; z-index:10; animation:bounce 2s infinite; cursor:pointer; }
+.scroll-arrow span { display:block; font-family:'Montserrat',sans-serif; font-size:0.6rem; font-weight:600; color:rgba(255,255,255,0.4); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.4rem; }
+.scroll-arrow .arrow { font-size:1.8rem; color:var(--teal-bright); }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+.demo-link { display:inline-flex; align-items:center; gap:0.4rem; color:var(--teal-bright); font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; margin-top:1rem; transition:color 0.2s; }
+.demo-link:hover { color:#00ffec; }
+.card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:8px; padding:1.3rem; }
+.card h4 { font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--teal-bright); margin-bottom:0.4rem; }
+.card p { font-size:0.8rem; color:var(--text-faint); line-height:1.6; }
+.price-card { background:rgba(0,180,160,0.06); border:2px solid var(--teal); border-radius:12px; padding:2rem; text-align:center; }
+.price-tag { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; color:var(--teal-bright); }
+.price-period { font-size:0.75rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.1em; }
+.includes-list { list-style:none; text-align:left; margin-top:1.2rem; }
+.includes-list li { padding:0.35rem 0; font-size:0.78rem; color:var(--text-mid); border-bottom:1px solid rgba(255,255,255,0.04); display:flex; align-items:center; gap:0.4rem; }
+.includes-list li::before { content:"\2713"; color:var(--teal-bright); font-weight:700; }
+.discount-badge { display:inline-block; background:var(--peach); color:var(--dark); font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:800; padding:0.35rem 0.9rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.06em; margin-top:1rem; }
+.faq-item { padding:0.8rem 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+.faq-q { font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; color:var(--peach); margin-bottom:0.3rem; }
+.faq-a { font-size:0.8rem; color:var(--text-faint); }
+.sig-line { border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:0.5rem; margin-top:2rem; min-width:220px; display:inline-block; }
+.sig-label { font-size:0.65rem; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.3rem; }
+.slide-counter { position:fixed; bottom:1.2rem; right:1.5rem; font-family:'Montserrat',sans-serif; font-size:0.65rem; font-weight:600; color:rgba(255,255,255,0.25); letter-spacing:0.08em; z-index:100; }
+.nav-hint { position:fixed; bottom:1.2rem; left:1.5rem; font-family:'Montserrat',sans-serif; font-size:0.55rem; color:rgba(255,255,255,0.15); letter-spacing:0.08em; z-index:100; }
+@media print {
+  .deck { overflow:visible; scroll-snap-type:none; }
+  .slide { min-height:100vh; page-break-after:always; page-break-inside:avoid; }
+  .slide-counter, .nav-hint { display:none; }
+}
+@media (max-width:768px) {
+  .slide { min-height:100vh; padding:2rem 1.2rem; }
+  .slide-img { background:#0A2A28; }
+  .slide-img img { width:100%; height:100%; object-fit:contain; }
+  .slide-html { padding:2rem 1.2rem; }
+  .inner { width:100%; }
+  .split { grid-template-columns:1fr; gap:1.2rem; }
+  .split-even { grid-template-columns:1fr; gap:1.2rem; }
+  .grid-2 { grid-template-columns:1fr; gap:0.8rem; }
+  .grid-4 { grid-template-columns:1fr 1fr; gap:0.6rem; }
+  [style*="grid-template-columns"] { grid-template-columns:1fr !important; gap:1rem !important; }
+  h2 { font-size:1.2rem; margin-bottom:0.7rem; }
+  h3 { font-size:0.85rem; }
+  .label { font-size:0.55rem; }
+  .task-num { font-size:0.5rem; padding:0.2rem 0.5rem; }
+  p { font-size:0.8rem; line-height:1.6; }
+  .quote { padding:0.5rem 0.8rem; margin-bottom:0.8rem; }
+  .quote p { font-size:0.85rem; }
+  .card { padding:0.8rem; }
+  .card h4 { font-size:0.65rem; }
+  .card p { font-size:0.7rem; line-height:1.5; }
+  .browser-frame { border-radius:6px; }
+  .browser-bar { height:22px; padding:0 8px; }
+  .browser-dot { width:6px; height:6px; }
+  .browser-frame img { max-height:250px; object-fit:cover; }
+  .price-card { padding:1.2rem; }
+  .price-tag { font-size:1.8rem; }
+  .includes-list li { font-size:0.7rem; padding:0.25rem 0; }
+  .discount-badge { font-size:0.6rem; padding:0.25rem 0.6rem; }
+  .faq-item { padding:0.5rem 0; }
+  .faq-q { font-size:0.68rem; }
+  .faq-a { font-size:0.72rem; }
+  .sig-line { min-width:120px; }
+  .scroll-arrow { display:none; }
+  .slide-counter { display:none; }
+  .nav-hint { font-size:0.5rem; }
+  .demo-link { font-size:0.65rem; }
+}
+</style>
+</head>
+<body>
+<div id="inapp-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:9999; background:var(--teal-bright); color:var(--dark); padding:10px 16px; text-align:center; font-family:'Montserrat',sans-serif; font-size:0.7rem; font-weight:700;">
+  For the best experience, <a href="" id="inapp-link" style="color:var(--dark); text-decoration:underline;">open in Safari</a> or Chrome
+</div>
+<div class="deck" id="deck">
+
+<!-- ========== SLIDE 1: COVER ========== -->
+<section class="slide slide-html" style="background:radial-gradient(ellipse at center, #0E3D3A 0%, #0A2A28 60%, #071E1C 100%);">
+  <div class="dot-overlay"></div>
+  <div class="inner" style="text-align:center;">
+    <img src="assets/cc-wordmark.png" alt="Clinic Catalyst" style="height:40px; margin-bottom:3rem; opacity:0.9;">
+    <h2 style="font-size:clamp(2rem,4vw,3.2rem); letter-spacing:2px; margin-bottom:0.5rem;">Two doctors Brisbane<br>should already know.<br><span class="teal">Let's introduce them.</span></h2>
+    <p style="max-width:500px; margin:1.5rem auto 2.5rem; font-size:1rem; color:var(--text-mid);">Prepared for Dr Colin McTari and Dr Ali, SKEEN Clinic, Spring Hill</p>
+    <p style="font-size:0.85rem; color:var(--text-faint); margin-bottom:0.3rem;">11 September 2026</p>
+    <p style="font-size:0.7rem; color:rgba(255,255,255,0.35); letter-spacing:2px; text-transform:uppercase;">By <strong style="color:var(--teal-bright); font-weight:600;">Kelly Wotherspoon</strong> & <strong style="color:var(--teal-bright); font-weight:600;">Alicia Hagen</strong></p>
+  </div>
+  <div class="scroll-arrow" onclick="document.getElementById('deck').scrollBy({top:window.innerHeight,behavior:'smooth'})">
+    <span>Click to begin</span>
+    <div class="arrow">&#8595;</div>
+  </div>
+</section>
+
+<!-- ========== SLIDE 2: SOCIAL PROOF ========== -->
+<section class="slide" style="padding:0; background:#000;"><img src="assets/social-proof.png" alt="Clinics we've worked with" style="width:100%; height:100%; object-fit:contain;"></section>
+
+<!-- ========== WHAT YOU'VE BUILT ========== -->
+<section class="slide slide-html" data-editable="true">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <div class="split" style="grid-template-columns:1fr 2fr; gap:2.5rem;">
+      <div style="text-align:center;">
+        <p class="label label-peach">Your clinic right now</p>
+        <h2 style="font-size:clamp(1.2rem,2.5vw,1.8rem);">What You've <span class="teal">Built Already</span></h2>
+        <img src="assets/skeen-room.jpg" alt="The SKEEN Clinic waiting room in Spring Hill" style="width:100%; max-width:280px; border-radius:10px; margin-top:1.5rem; object-fit:cover; object-position:center; aspect-ratio:3/4;">
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div class="card" style="display:flex; gap:0.8rem; align-items:flex-start; padding:1rem;"><span style="color:var(--teal-bright); font-size:1.1rem; font-weight:700; flex-shrink:0;">&#10003;</span><p style="font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin:0;">Two doctors, more than 30 years in skin between them. Dr Colin with 17-plus years of clinical and surgical work, trained across major Brisbane hospitals. Dr Ali with 14-plus years in skin cancer medicine and a Fellowship of the Skin Cancer College Australasia.</p></div>
+        <div class="card" style="display:flex; gap:0.8rem; align-items:flex-start; padding:1rem;"><span style="color:var(--teal-bright); font-size:1.1rem; font-weight:700; flex-shrink:0;">&#10003;</span><p style="font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin:0;">A 5.0 Google rating from 69 reviews. The people who walk through your door already rate the care highly. The job now is letting everyone else see it.</p></div>
+        <div class="card" style="display:flex; gap:0.8rem; align-items:flex-start; padding:1rem;"><span style="color:var(--teal-bright); font-size:1.1rem; font-weight:700; flex-shrink:0;">&#10003;</span><p style="font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin:0;">3D total body imaging with the VECTRA WB360. A patient's skin captured in about three seconds and compared visit to visit. Patients mention the scan in their reviews without being asked.</p></div>
+        <div class="card" style="display:flex; gap:0.8rem; align-items:flex-start; padding:1rem;"><span style="color:var(--teal-bright); font-size:1.1rem; font-weight:700; flex-shrink:0;">&#10003;</span><p style="font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin:0;">A clinic that already feels warm: the green couch, the oak, the orchids. Parking in the same building. Most of what makes a patient relax is already sitting in your waiting room.</p></div>
+        <div class="card" style="display:flex; gap:0.8rem; align-items:flex-start; padding:1rem;"><span style="color:var(--teal-bright); font-size:1.1rem; font-weight:700; flex-shrink:0;">&#10003;</span><p style="font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin:0;">The check, the surgery, the repair and the scar care, under one roof. Plus light therapy, laser, radiofrequency, facial skin analysis and underarm sweating care. Skin health and skin confidence in one clinic.</p></div>
+        <div class="card" style="display:flex; gap:0.8rem; align-items:flex-start; padding:1rem;"><span style="color:var(--teal-bright); font-size:1.1rem; font-weight:700; flex-shrink:0;">&#10003;</span><p style="font-size:0.82rem; color:var(--text-mid); line-height:1.5; margin:0;">Already first in Google Maps for "skin cancer clinic spring hill", with Dr Ali seeing patients with or without a referral. The foundation is there. It just is not being seen yet.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GOALS ========== -->
+<section class="slide slide-html alt" data-editable="true">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label label-peach">Tailored for SKEEN Clinic</p>
+    <h2>Your Goals & <span class="teal">Objectives</span></h2>
+    <div style="max-width:800px; margin-top:1rem;">
+      <div class='card' style='padding:1.1rem; margin-bottom:0.7rem;'><h4>1. Become the Skin Cancer Clinic Brisbane Knows, Likes and Trusts</h4><p>People book with doctors they know, like and trust, or who someone close to them recommends. Right now the care is better than the footprint. We close that gap across your websites, Google and Instagram.</p></div>
+      <div class='card' style='padding:1.1rem; margin-bottom:0.7rem;'><h4>2. Turn Worry Into Bookings</h4><p>Skin cancer frightens people, and frightened people put things off. Every page, post and ad explains what happens next, warmly, so the booking feels like relief instead of a risk.</p></div>
+      <div class='card' style='padding:1.1rem; margin-bottom:0.7rem;'><h4>3. Put Dr Colin and Dr Ali Front and Centre</h4><p>Faces, not logos. A film series and a month of content that let Brisbane meet you both, hear how you explain things, and see a little of your humour before they ever walk in.</p></div>
+      <div class='card' style='padding:1.1rem; margin-bottom:0.7rem;'><h4>4. Win the Women Who Book for Everyone</h4><p>Women look after their own health and the health of the men in their lives. Speak to her, and she books herself, her partner and her dad. That is the audience every campaign is built around.</p></div>
+      <div class='card' style='padding:1.1rem;'><h4>5. Grow Skin and Cosmetic Medicine With Its Own Home</h4><p>A second website for aesthetic and cosmetic medicine that brings skin check patients across at the right moment, and sends cosmetic patients back for their yearly check.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TASK 1 - BRANDING & POSITIONING ========== -->
+<section class="slide slide-html alt" data-editable="true">
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <p class="label">Quick wins you can implement now</p>
+    <div class="split">
+      <div>
+        <span class="task-num">Task One</span>
+        <h2>Branding & <span class="teal">Positioning</span></h2>
+        <div class="quote"><p>People book with the doctors they already feel they know.</p></div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> The brand becomes the doctors. SKEEN is the place; Dr Colin and Dr Ali are the reason people come. Their faces lead the website, the ads and every Instagram post, and the logo sits quietly in the corner.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Warmth before technology. The 3D scan, the laser and the analysis are the answer, not the headline. Every page opens with reassurance and "here is what happens", and the machine arrives as the reason it is easier with you.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Dr Alireza Afrasiabi becomes "Dr Ali", with his full registered name alongside. A little humour from both of you on camera does more for trust than any credential list.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Speak her language. "Skin check" is the phrase Queenslanders search most, and "book yours, then book his" runs through everything, because she is the one who books.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Every word AHPRA-safe: "special interest in", "doctors who perform skin cancer surgery", education instead of testimonials. The concept is on the right.</li>
+        </ul>
+        <a href="https://clinic-catalyst-au.github.io/skeen/" target="_blank" class="demo-link">Open the website concept &#8594;</a>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/skeen-mockup-hero.jpg" alt="SKEEN website concept: warm homepage opening on the clinic entrance">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TASK 2 - WEBSITE & SEO ========== -->
+<section class="slide slide-html" data-editable="true">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num">Task Two</span>
+        <h2>Website & <span class="teal">SEO</span></h2>
+        <div class="quote"><p>A beautiful website earns nothing on its own. It has to be found, and it has to book.</p></div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Phone first. The new site is designed and speed-tested on a phone before a desktop, with Call and Book always one tap away.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Built around what patients type: "skin check", "Spring Hill", "mole mapping", cost and Medicare, how often to check, what happens if something is found. Each one answered in plain words, signed by the doctor.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> The visit, start to finish, on the page: book, arrive, talk first, the check, the three-second scan, results in plain words, see you next time. Fear goes down when nothing is a surprise.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Fully wired: meta tags, the Meta pixel and Google tag firing, conversion tracking on every booking and enquiry, clinic details Google and AI search can read, and a 3, 6 and 12 month SEO plan behind it.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> On the right, the site today. Click through to the concept to see the new one, built from your own waiting room, your own doctors and video tiles waiting for the film days.</li>
+        </ul>
+        <a href="https://clinic-catalyst-au.github.io/skeen/" target="_blank" class="demo-link">Open the website concept &#8594;</a>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/skeen-website-now.png" alt="skeenclinic.com.au homepage today">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== THE TWO WEBSITES ========== -->
+<section class="slide slide-html alt" data-editable="true">
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num">The Websites</span>
+        <h2>Two Websites, <span class="teal">One Journey</span></h2>
+        <div class="quote"><p>Skin health brings them in. Skin confidence keeps them coming back.</p></div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.76rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.35rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> <strong style="color:var(--white); font-weight:600;">SKEEN, skin checks and skin cancer care.</strong> The front door for skin health: the visit explained, skin cancer explained calmly, the machines explained like a person would, both doctors, fees in plain words, a 30-second skin check-in.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.76rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.35rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> <strong style="color:var(--white); font-weight:600;">Skin and cosmetic medicine.</strong> Its own home for pigment and melasma, texture and scarring, firmness, redness, scar care after surgery, moles and skin tags, and heavy underarm sweating. Warmer, softer, the same two doctors.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.76rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.35rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> They feed each other. "Your skin check is done, now the part that is just for you" on one side; "just had your check?" on the other. Scar care after skin cancer surgery is the bridge.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.76rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.35rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Separate ad audiences, separate search terms, one booking system and one list underneath, so nobody is ever marketed the wrong thing.</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.76rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.35rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Built in 30 days as part of the takeover, launched with your own footage in them, and yours to keep. <a href="https://clinic-catalyst-au.github.io/skeen/aesthetics.html" target="_blank" style="color:var(--teal-bright); white-space:nowrap;">See the second concept &#8594;</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/skeen-mockup-aesthetics.jpg" alt="Skin and cosmetic medicine website concept">
+        </div>
+        <p style="font-size:0.72rem; margin-top:0.5rem;"><a href="https://clinic-catalyst-au.github.io/skeen/aesthetics.html" target="_blank" style="color:var(--teal-bright);">Click through the skin and cosmetic medicine concept &#8594;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TASK 3 - OFFER & PATHWAYS ========== -->
+<section class="slide slide-html alt" data-editable="true">
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num">Task Three</span>
+        <h2>Offer & <span class="teal">Pathway Strategy</span></h2>
+        <div class="quote"><p>A calm path from "I should really get that looked at" to booked.</p></div>
+        <p style="font-size:0.78rem; color:var(--text-mid); margin-bottom:0.7rem;">Three doors, all of them starting with a doctor, none of them a discount:</p>
+        <div style="background:rgba(0,180,160,0.06); border:1px solid rgba(0,180,160,0.25); border-radius:6px; padding:0.6rem 0.85rem; margin-bottom:0.5rem;">
+          <p style="font-size:0.68rem; color:var(--teal-bright); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.15rem;">Start Here</p>
+          <p style="font-size:0.78rem; color:var(--text-mid); line-height:1.45; margin:0;">The 30-second skin check-in on both websites and in the Instagram bio. Two gentle questions, including "I am booking for someone I love". Every completion is a lead with the concern already known</p>
+        </div>
+        <div style="background:rgba(0,180,160,0.06); border:1px solid rgba(0,180,160,0.25); border-radius:6px; padding:0.6rem 0.85rem; margin-bottom:0.5rem;">
+          <p style="font-size:0.68rem; color:var(--teal-bright); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.15rem;">Skin Health</p>
+          <p style="font-size:0.78rem; color:var(--text-mid); line-height:1.45; margin:0;">The full skin check: talk first, head to toe, the three-second 3D image if it suits, results in plain words, next check booked before they leave. Your fees stated plainly, with Medicare rebates explained</p>
+        </div>
+        <div style="background:rgba(232,168,124,0.08); border:1px solid rgba(232,168,124,0.3); border-radius:6px; padding:0.6rem 0.85rem; margin-bottom:0.8rem;">
+          <p style="font-size:0.68rem; color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.15rem;">Skin Confidence</p>
+          <p style="font-size:0.78rem; color:var(--text-mid); line-height:1.45; margin:0;">A skin analysis consultation for pigment, texture, firmness and scar concerns. <strong style="color:var(--teal-bright);">Priced at consultation</strong>. Assessment, honesty about what suits, a plan, and MediPay for the larger journeys</p>
+        </div>
+        <a href="https://clinic-catalyst-au.github.io/skeen/#checkin" target="_blank" class="demo-link">Try the skin check-in &#8594;</a>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/skeen-mockup-checkin.jpg" alt="Skin check-in demo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TASK 4 - ADVERTISING ========== -->
+<section class="slide slide-html" data-editable="true">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num">Task Four</span>
+        <h2>Advertising & <span class="teal">Campaign Strategy</span></h2>
+        <div class="quote"><p>The most spectacular ad will not convert if the website and Instagram behind it do not back it up.</p></div>
+        <div style="display:grid; gap:0.4rem;">
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">Top of funnel</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">"Put yourself on the list this time." Speaks to the woman who books everyone else's appointments. Book yours, then book his. The skin check is the product</span></div>
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">Campaign 1</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">Skin check season. Queensland skin check searches peak every January, so education-led campaigns go live ahead of summer, to a skin check landing page</span></div>
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">Campaign 2</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">Skin confidence. Pigment, texture and firmness, doctor-led, to the second website. Concern first, never a machine name in the headline</span></div>
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">Campaign 3</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">Remarketing. Video viewers, site visitors and people who did not book see Dr Colin and Dr Ali explaining the visit, the scan and the results, then the booking again</span></div>
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">Search terms</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">skin check brisbane, skin cancer clinic spring hill, skin check brisbane cbd, mole mapping brisbane, melasma treatment brisbane, skin cancer surgery brisbane. The page matches the search, exactly</span></div>
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">No referral</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">Dr Ali sees patients with or without a GP referral. One less step between worry and a booking</span></div>
+          <div style="display:flex; align-items:baseline; gap:0.6rem;"><span style="color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.72rem; min-width:100px; flex-shrink:0;">AHPRA</span><span style="font-size:0.72rem; color:var(--text-mid); line-height:1.35;">No scare tactics, no testimonials, no superlatives, no prescription brand names. Every line checked before it goes anywhere</span></div>
+        </div>
+        <p style="font-size:0.66rem; color:var(--text-faint); margin-top:0.5rem; font-style:italic;">Geo-targeted across Brisbane, starting with Spring Hill, the CBD and the inner north</p>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/skeen-ads.png" alt="Warm, doctor-led ad concepts for SKEEN">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TASK 5 - CRM & NURTURE ========== -->
+<section class="slide slide-html alt" data-editable="true">
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num">Task Five</span>
+        <h2>CRM & <span class="teal">Nurture Systems</span></h2>
+        <div class="quote"><p>The right time to book the next skin check is before they leave.</p></div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Today a website enquiry arrives as an email. In a CRM, every enquiry lands in one place, tagged skin health or skin confidence, with the concern from the check-in attached</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Recall reminders by SMS when each patient's next check is due, timed so the yearly check never slips down the list again, and loaded before summer</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Review requests after every appointment, sent to every patient, so 69 becomes a number that matches the care</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Education emails that introduce skin check patients to skin and cosmetic care at the right moment, and remind cosmetic patients about their check. HotDoc stays your booking system</li>
+        </ul>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/review-sms-mockup.png" alt="CRM and review SMS automation">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TASK 6 - SPEED TO LEAD ========== -->
+<section class="slide slide-html" data-editable="true">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num">Task Six</span>
+        <h2>Speed-to-Lead & <span class="teal">After Hours</span></h2>
+        <div class="quote"><p>Someone worried about a spot at 9pm deserves an answer at 9pm.</p></div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> A worried person who sends a message and hears nothing books somewhere else, or talks themselves out of it. Every enquiry gets a warm text back within minutes, day or night</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Instagram and Facebook messages answered after hours: what happens at a skin check, whether a referral is needed, parking, the booking link</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Anything that needs a doctor is flagged to your team the next morning with the whole conversation captured</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Nobody on your team answers the same five questions all day. The system does, and it never has a sick day</li>
+        </ul>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/speed-to-lead-mockup.png" alt="After-hours automation mockup">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BONUS - SKIN CHECK-IN ========== -->
+<section class="slide slide-html teal-bg" data-editable="true">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <div class="split">
+      <div>
+        <span class="task-num" style="border-color:var(--peach); color:var(--peach);">Bonus</span>
+        <h2>The 30-Second <span class="peach">Skin Check-In</span></h2>
+        <div class="quote"><p>Not sure what you need? That is exactly who this is for.</p></div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Two gentle questions in patients' words: what brings you in, and when was your last full skin check. Then the right first appointment, explained</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> "I am booking for someone I love" is an answer, because she is the one booking for the whole family</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Captures first name and mobile, and a text goes out straight away with times that suit</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.82rem; color:var(--text-mid); line-height:1.6; margin-bottom:0.4rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Lives on both websites, every ad landing page and the Instagram bio. A skin confidence version sits on the second site</li>
+        </ul>
+        <a href="https://clinic-catalyst-au.github.io/skeen/#checkin" target="_blank" class="demo-link">Try the demo &#8594;</a>
+      </div>
+      <div>
+        <div class="browser-frame">
+          <div class="browser-bar"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+          <img src="assets/skin-assessment-mockup.png" alt="Skin check-in on a phone">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRACTITIONER POSITIONING ========== -->
+<section class="slide slide-html" data-editable="true">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label">Your biggest competitive edge</p>
+    <h2>Practitioner <span class="teal">Positioning</span></h2>
+    <p style="max-width:700px; margin-bottom:1.5rem;">The doctors who check your skin are the doctors who explain it, treat it, repair it and see you next time. No hand-offs. That continuity is the story, told in AHPRA-safe words on every page, ad and post.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:800px;">
+      <div class="card" style="text-align:center; padding:1.5rem;">
+        <img src="assets/skeen-colin.jpg" alt="Dr Colin McTari" style="width:140px; height:140px; border-radius:50%; object-fit:cover; object-position:center top; margin-bottom:0.8rem; border:2px solid var(--teal); background:#fff;">
+        <h4 style="color:var(--peach); font-size:0.8rem; margin-bottom:0.2rem;">Dr Colin McTari</h4>
+        <p style="font-size:0.65rem; color:var(--teal-bright); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.05em; margin-bottom:0.4rem;">FOUNDER &amp; MEDICAL DIRECTOR</p>
+        <p style="font-size:0.75rem; color:var(--text-faint); line-height:1.5;">More than 17 years in skin. Special interest in complex skin cancer surgery and repair, laser and aesthetic medicine. On camera: the one who explains the scan and the surgery so it stops sounding scary.</p>
+      </div>
+      <div class="card" style="text-align:center; padding:1.5rem;">
+        <img src="assets/skeen-ali.jpg" alt="Dr Ali (Dr Alireza Afrasiabi)" style="width:140px; height:140px; border-radius:50%; object-fit:cover; object-position:center top; margin-bottom:0.8rem; border:2px solid var(--teal); background:#fff;">
+        <h4 style="color:var(--peach); font-size:0.8rem; margin-bottom:0.2rem;">Dr Ali (Dr Alireza Afrasiabi)</h4>
+        <p style="font-size:0.65rem; color:var(--teal-bright); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.05em; margin-bottom:0.4rem;">SKIN CANCER DOCTOR &amp; GP &middot; FSCCA, FRACGP</p>
+        <p style="font-size:0.75rem; color:var(--text-faint); line-height:1.5;">More than 14 years in skin cancer medicine. Special interest in skin checks, flap and graft repairs on the face, nose and ears, and laser for redness and pigment. Sees patients with or without a referral.</p>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:var(--text-faint); margin-top:1.2rem; max-width:700px;"><em>Each doctor gets their own page, their own film series and their own booking link. The portraits on this slide are from your current website; new ones shot on the film days replace them.</em></p>
+  </div>
+</section>
+
+<!-- ========== CONTENT FUNNEL ========== -->
+<section class="slide slide-html teal-bg">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <p class="label label-peach">Organic and marketing, working together</p>
+    <h2>Socials build the relationship. <span class="peach">Marketing books it.</span></h2>
+    <p style="max-width:800px; margin-bottom:1.2rem; font-size:0.85rem;">People do not want to be sold to on Instagram. They want to know who is going to look at their skin. The ads find her; once she follows, what she sees in stories and feed backs up exactly why she clicked, and the pixel keeps SKEEN in front of her until she books.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
+      <div class="card" style="padding:1.1rem;">
+        <p style="font-size:0.62rem; color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Top of funnel &middot; ads, bio, Google</p>
+        <h4 style="margin-bottom:0.4rem;">"I keep putting it off"</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> What actually happens at a skin check, start to finish</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Book yours, then book his</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> No referral needed to see Dr Ali</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> CTA, always: the skin check-in, or book your check</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:1.1rem;">
+        <p style="font-size:0.62rem; color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Middle of funnel &middot; education videos</p>
+        <h4 style="margin-bottom:0.4rem;">The fear, explained away</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> The three-second 3D scan, and why you stand still</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Sunspot or something else?</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> BCC, SCC and melanoma, calmly</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> What happens if we find something</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Cost, Medicare and how often to check</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:1.1rem;">
+        <p style="font-size:0.62rem; color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Bottom of funnel &middot; the second chapter</p>
+        <h4 style="margin-bottom:0.4rem;">Skin confidence, for patients you already have</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Caring for the scar after skin cancer surgery</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Pigment and melasma: why it comes back</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> Texture, firmness and what laser can and cannot do</li>
+          <li style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid); line-height:1.5; margin-bottom:0.3rem;"><span style="color:var(--teal-bright); flex-shrink:0;">&#8226;</span> The underarm sweating question nobody asks out loud</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:0.9rem; padding:0.8rem 1.1rem; background:rgba(0,180,160,0.06); border-color:rgba(0,180,160,0.25);">
+      <p style="font-size:0.62rem; color:var(--peach); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">The film days &middot; we interview you, we never script you</p>
+      <p style="font-size:0.72rem; margin-bottom:0.4rem;">We sit you both down, ask the questions, and film the answers, with a few laughs along the way. Four series: who you are, why you love this work, what seeing you is like, and the machines explained. For example:</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.2rem 1rem; font-size:0.7rem; color:var(--text-mid); line-height:1.4;">
+        <div>"What made you choose skin, of everything in medicine?"</div>
+        <div>"What do you say to someone who is scared to book?"</div>
+        <div>"What is the patient moment you still think about?"</div>
+        <div>"Why does the scan take three seconds and not three minutes?"</div>
+        <div>"What does a doctor look for that a mirror misses?"</div>
+        <div>"What do you tell the partner who says he is fine?"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRANSITION ========== -->
+<section class="slide slide-html teal-bg">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-tl"></div>
+  <div class="glow glow-br"></div>
+  <div class="inner" style="text-align:center;">
+    <p class="label label-peach">Sound familiar?</p>
+    <h2 style="font-size:clamp(1.6rem,4vw,2.8rem); margin-bottom:1.5rem;">Stop Doing Everything <span class="peach">Yourself</span></h2>
+    <p style="max-width:650px; margin:0 auto 2rem; font-size:1rem;">The website. The reels. The ads. The enquiries in an inbox. Working out what to post, and when. You trained to look after skin, not to run a marketing department between patients. You should not have to.</p>
+    <h2 style="font-size:clamp(1.2rem,3vw,2rem);">That's Where <span class="teal">We Step In</span></h2>
+    <p style="max-width:600px; margin:1rem auto 0; font-size:0.85rem;">For 30 days we take it over. We film you, build both websites, launch the ads, schedule the month and hand you a plan for the year. You walk into clinic and the patient is already there.</p>
+    <div style="margin:2rem auto 0; display:inline-block; background:rgba(0,180,160,0.08); border:1px solid rgba(0,180,160,0.2); border-radius:8px; padding:1rem 2rem;">
+      <p style="font-size:0.7rem; color:var(--teal-bright); font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3rem;">Kelly's proven systems</p>
+      <p style="font-size:1.1rem; color:var(--white); font-weight:600;">15+ hours reclaimed per week, within 7 days of going live</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== HATS WE TAKE OFF YOU ========== -->
+<section class="slide slide-html alt">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <div class="split-even">
+      <div>
+        <p class="label label-peach">What we actually do</p>
+        <h2>The Hats We<br><span class="teal">Take Off You</span></h2>
+        <p style="margin-bottom:1.2rem;">So you can go back to being the doctors.</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Websites - two, designed, built, live</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Filming - we come to Spring Hill</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Editing - reels and ad cuts, done</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Ads - built, launched, AHPRA-checked</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Landing pages - one per campaign</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Content - a month, scheduled</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> Instagram - rebuilt around your faces</div>
+          <div style="display:flex; gap:0.5rem; font-size:0.78rem; color:var(--text-mid);"><span style="color:var(--teal-bright); flex-shrink:0;">&#10003;</span> SEO - the 3, 6 and 12 month plan</div>
+        </div>
+        <p class="mt-1" style="font-size:0.85rem; color:var(--peach-light); font-weight:600;">The only hat left is the one you trained for. The doctor.</p>
+      </div>
+      <div>
+        <img src="assets/conference-stage.jpg" alt="Kelly and Alicia presenting" style="width:100%; border-radius:12px; object-fit:cover; object-position:center top; border:2px solid rgba(0,180,160,0.2); max-height:420px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CAMPAIGN PROCESS ========== -->
+<section class="slide slide-html alt">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label">How it works</p>
+    <h2>Our Campaign <span class="teal">Process</span></h2>
+    <p style="max-width:700px; margin-bottom:2rem;">She sees your ad on Facebook or Instagram, leaves her details, and from there everything runs itself.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1.2rem;">
+      <div class="card" style="text-align:center; padding:1rem;"><img src="assets/campaign-ad.png" alt="Campaign" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; margin-bottom:0.8rem;"><h4>Campaign</h4><p>A warm, doctor-led ad reaches the woman across Brisbane who has been meaning to book a skin check for months</p></div>
+      <div class="card" style="text-align:center; padding:1rem;"><img src="assets/campaign-crm.png" alt="Into CRM" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; margin-bottom:0.8rem;"><h4>Into CRM</h4><p>She takes the skin check-in. Name, mobile and what brings her in, captured and tagged</p></div>
+      <div class="card" style="text-align:center; padding:1rem;"><img src="assets/campaign-followup.png" alt="Follow Up" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; margin-bottom:0.8rem;"><h4>5-Day Follow Up</h4><p>Automated SMS, email and call sequences if she does not book straight away</p></div>
+      <div class="card" style="text-align:center; padding:1rem;"><img src="assets/campaign-booked.png" alt="Booked" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; margin-bottom:0.8rem;"><h4 style="color:var(--peach);">Booked</h4><p>Her skin check is booked in HotDoc, and quite often his is too. You walk in and the patient is there</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SYSTEMS INSTALLED ========== -->
+<section class="slide slide-html">
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <div class="split-even" style="margin-bottom:1.5rem;">
+      <div>
+        <p class="label">What you walk away with</p>
+        <h2>Systems <span class="teal">Installed</span></h2>
+        <p>When nobody is juggling systems that do not talk to each other, life gets easier for everyone. We install systems that just do it, no copy-paste, no manual follow-up.</p>
+      </div>
+      <div><img src="assets/systems-ecosystem.png" alt="Connected ecosystem" style="width:100%; border-radius:8px;"></div>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/systems-leads-booked.png" alt="Leads Booked" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Leads Booked</h4><p>New enquiries captured, answered, followed up and booked into HotDoc, without anyone chasing them</p></div></div>
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/systems-nurtured.png" alt="Patients Recalled" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Patients Recalled</h4><p>Reminders when each skin check is due, scar care follow-ups, skin confidence education and reviews, on autopilot</p></div></div>
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/systems-emails.png" alt="Emails Handled" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Emails &amp; DMs Handled</h4><p>Referral, parking, what to expect: answered instantly, so your team can look after the people in the room</p></div></div>
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/systems-afterhours.png" alt="After-Hours" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>After-Hours Covered</h4><p>Enquiries handled outside clinic hours, so a worried person never waits overnight for a reply</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== YOUR PART ========== -->
+<section class="slide slide-html alt">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label label-peach">Team effort</p>
+    <h2>Your Part in <span class="teal">the Success</span></h2>
+    <p style="max-width:700px; margin-bottom:1.5rem;">We cannot control every part of your business. Success is a team effort. Here is what we need from you.</p>
+    <div class="grid-2">
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/yourpart-experience.png" alt="On camera" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Show Up on Camera</h4><p>The film days in week one. Relaxed and real beats polished, and a laugh beats a script. Brisbane wants to meet the two of you before they book.</p></div></div>
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/yourpart-ba.png" alt="Deliver" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Deliver the Experience</h4><p>The system gets her through the door. The way you explain things in the room turns a first check into a patient, and a family, for years.</p></div></div>
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/yourpart-clinic.png" alt="Clinic" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Keep the Welcome Warm</h4><p>Your Spring Hill fitout already feels calm and inviting. We show it off online; the front desk carries that feeling through on every call.</p></div></div>
+      <div class="card" style="padding:1rem; display:flex; gap:1rem; align-items:center;"><img src="assets/yourpart-rebook.png" alt="Rebook" style="width:120px; height:120px; object-fit:cover; border-radius:6px; flex-shrink:0;"><div><h4>Book the Next Check</h4><p>Every visit ends with the next check booked, and the question "when is he coming in?". That is where the recurring bookings live.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== THE 30 DAYS ========== -->
+<section class="slide slide-html alt">
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label">The 30-day takeover</p>
+    <h2>Film it, build it, launch it, <span class="teal">then hand you the year</span></h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:1.2rem;">
+      <div class="card" style="padding:1.1rem;"><h4>Week 1 - Position and film</h4><p>Positioning and messaging for both sides of SKEEN. We come down to Spring Hill and film Dr Colin, Dr Ali and the clinic for the websites, ads and Instagram. Pixel and Google tag set up so every visit counts from day one.</p></div>
+      <div class="card" style="padding:1.1rem;"><h4>Week 2 - Build</h4><p>Both websites built around your footage: the skin check journey, skin cancer explained, the machines explained, the doctors, the check-in. Reels and ad cuts edited from the film days.</p></div>
+      <div class="card" style="padding:1.1rem;"><h4>Week 3 - Launch</h4><p>Websites live. Landing pages built for each campaign. Instagram rebuilt around your faces. A full month of posts and reels scheduled, so the socials are ready before the ads send anyone there.</p></div>
+      <div class="card" style="padding:1.1rem;"><h4>Week 4 - Go and hand over</h4><p>Ads launched to the landing pages, remarketing switched on. The 3, 6 and 12 month SEO plan delivered. A walk-through of everything, and what comes next.</p></div>
+    </div>
+    <div class="card" style="margin-top:1.2rem; padding:1rem 1.2rem; background:rgba(0,180,160,0.06); border-color:rgba(0,180,160,0.25);">
+      <h4 style="margin-bottom:0.3rem;">The SEO plan: 3, 6 and 12 months</h4>
+      <p style="font-size:0.74rem;">First 3 months: technical clean-up, "skin check" and Spring Hill in the key titles, clinic details for Google and AI search, Google Business Profile services and photos, a plain fees and Medicare page &middot; By 6 months: pages for removals, sun damage, pigment and scar care, a page for each doctor, FAQ answers AI tools can quote &middot; By 12 months: an education library patients return to, summer skin check content ready before the season, steady review growth, reporting on which searches bring bookings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== YOUR PATH FORWARD ========== -->
+<section class="slide slide-html">
+  <div class="glow glow-br"></div>
+  <div class="inner">
+    <div class="split-even">
+      <div>
+        <p class="label">Your path forward</p>
+        <h2>Thirty days.<br><span class="teal">Then Brisbane knows you.</span></h2>
+        <p style="margin-bottom:1.5rem;">This is the moment it gets easier. One team takes the whole thing: the film days, both websites, the ads, the month of content and the plan for the year. Other than a film day with us, you stay in the room with your patients.</p>
+        <div class="faq-item">
+          <p class="faq-q">What we deliver in 30 days</p>
+          <p class="faq-a">A warm new SKEEN website and a skin and cosmetic medicine website that feed each other. Film days in Spring Hill. Meta ads running to concern-led landing pages, with the pixel and remarketing live. A month of content scheduled. Your organic and Instagram strategy fixed, so it proves every ad. The 3, 6 and 12 month SEO plan.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Your part</p>
+          <p class="faq-a">A film day with us, your fees and Medicare wording, your treatment list, and a few questions answered on your phone. That is it.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Ad spend</p>
+          <p class="faq-a">Paid directly to Meta from your own account, on top.</p>
+        </div>
+      </div>
+      <div>
+        <div class="price-card">
+          <p class="price-period">The 30-day takeover</p>
+          <div class="price-tag">$12,000</div>
+          <p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.2rem;">+ GST &middot; fixed scope &middot; delivered in 30 days</p>
+          <ul class="includes-list">
+            <li>New SKEEN website, phone-first and fully wired</li>
+            <li>Skin and cosmetic medicine website, feeding the main site</li>
+            <li>We come to Spring Hill and film for web, ads and socials</li>
+            <li>Meta ads to concern-led landing pages</li>
+            <li>Pixel, Google tag and remarketing live</li>
+            <li>A month of posts and reels, scheduled</li>
+            <li>Organic strategy fixed, Instagram rebuilt around your faces</li>
+            <li>Instagram set up as the social proof behind every ad</li>
+            <li>SEO plan for 3, 6 and 12 months</li>
+            <li>Everything AHPRA-checked before it goes live</li>
+          </ul>
+          <div class="discount-badge">Two doctors. Two websites. One month.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHAT WE BUILD TOGETHER ========== -->
+<section class="slide slide-html alt">
+  <div class="dot-overlay"></div>
+  <div class="glow glow-tl"></div>
+  <div class="inner">
+    <p class="label label-peach">Everything you walk out with</p>
+    <h2>What We <span class="teal">Build Together</span></h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.2rem; margin-top:1.5rem;">
+      <div class="card" style="padding:1.2rem;"><h4>Two Websites</h4><p>Skin checks and skin cancer care, plus skin and cosmetic medicine. Warm, phone-first, wired for tracking, and feeding each other.</p></div>
+      <div class="card" style="padding:1.2rem;"><h4>The Film Library</h4><p>Dr Colin and Dr Ali on camera: who you are, why you love this work, what a visit is like, the machines explained.</p></div>
+      <div class="card" style="padding:1.2rem;"><h4>Meta Ads</h4><p>Skin check season, book for two and skin confidence campaigns across Brisbane. Landing pages built, pixel installed, remarketing live.</p></div>
+      <div class="card" style="padding:1.2rem;"><h4>Content Calendar</h4><p>A full month of posts and reels scheduled, built around faces, education and the clinic, never ads dressed up as posts.</p></div>
+      <div class="card" style="padding:1.2rem;"><h4>Instagram Strategy</h4><p>Stories and feed that back up every ad, so a new follower sees exactly why they clicked and keeps coming back.</p></div>
+      <div class="card" style="padding:1.2rem;"><h4>SEO &amp; GEO Plan</h4><p>A 3, 6 and 12 month plan so Google and AI search know who Dr Colin and Dr Ali are, what they treat and where to find them.</p></div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;"><span style="display:inline-block; background:var(--teal-bright); color:var(--dark); padding:0.9rem 2rem; border-radius:6px; font-family:'Montserrat',sans-serif; font-size:0.8rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;">Reply "yes" and we lock in your film days</span><p style="font-size:0.7rem; color:var(--text-faint); margin-top:0.6rem;">$12,000 + GST for the 30-day takeover &middot; ad spend on top, in your own account</p></div>
+  </div>
+</section>
+
+</div>
+
+<div class="slide-counter" id="counter">1 / --</div>
+<div class="nav-hint">Arrow keys to navigate &middot; F for fullscreen</div>
+
+<script>
+const deck = document.getElementById('deck');
+const slides = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+const total = slides.length;
+counter.textContent = '1 / ' + total;
+function updateCounter() {
+  const current = Math.round(deck.scrollTop / window.innerHeight) + 1;
+  counter.textContent = current + ' / ' + total;
+}
+deck.addEventListener('scroll', updateCounter);
+document.addEventListener('keydown', function(e) {
+  const h = window.innerHeight;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); deck.scrollBy({top:h, behavior:'smooth'}); }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); deck.scrollBy({top:-h, behavior:'smooth'}); }
+  if (e.key === 'Home') { e.preventDefault(); deck.scrollTo({top:0, behavior:'smooth'}); }
+  if (e.key === 'End') { e.preventDefault(); deck.scrollTo({top:deck.scrollHeight, behavior:'smooth'}); }
+  if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+});
+var ua = navigator.userAgent || '';
+if (/FBAN|FBAV|Instagram|Line|Messenger/i.test(ua)) {
+  var banner = document.getElementById('inapp-banner');
+  var link = document.getElementById('inapp-link');
+  if (banner) { banner.style.display = 'block'; }
+  if (link) { link.href = window.location.href; }
+}
+const canvas = document.getElementById('sig-canvas');
+const ctx = canvas ? canvas.getContext('2d') : null;
+let drawing = false;
+let hasSigned = false;
+if (ctx) {
+  ctx.strokeStyle = '#00D4BC';
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  function getPos(e) {
+    const r = canvas.getBoundingClientRect();
+    const t = e.touches ? e.touches[0] : e;
+    return { x: (t.clientX - r.left) * (canvas.width / r.width), y: (t.clientY - r.top) * (canvas.height / r.height) };
+  }
+  canvas.addEventListener('mousedown', e => { drawing = true; hasSigned = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
+  canvas.addEventListener('mousemove', e => { if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseleave', () => drawing = false);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; hasSigned = true; const p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); }, {passive:false});
+  canvas.addEventListener('touchmove', e => { e.preventDefault(); if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); }, {passive:false});
+  canvas.addEventListener('touchend', () => drawing = false);
+}
+const dateEl = document.getElementById('sig-date');
+if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-AU', {day:'numeric', month:'long', year:'numeric'});
+function clearSig() {
+  if (ctx) { ctx.clearRect(0, 0, canvas.width, canvas.height); hasSigned = false; }
+}
+function acceptProposal() {
+  const name = document.getElementById('sig-name').value.trim();
+  if (!hasSigned) { alert('Please sign above before accepting.'); return; }
+  if (!name) { alert('Please enter your full name.'); return; }
+  document.getElementById('accept-btn').style.display = 'none';
+  document.getElementById('accept-confirm').style.display = 'block';
+}
+</script>
+</body>
+</html>
