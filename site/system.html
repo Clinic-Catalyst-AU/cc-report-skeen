@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SKEEN Clinic - Behind the Scenes | Clinic Catalyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&family=Fraunces:opsz,wght,SOFT@9..144,400,0..100&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dark:#0A2A28; --dark-alt:#0E3D3A; --deep:#071E1C; --teal:#00B4A0; --teal-bright:#00D4BC; --peach:#E8A87C; --peach-light:#F5C7A0;
+  --white:#FFFFFF; --faint:rgba(255,255,255,.6); --mid:rgba(255,255,255,.85); --line:rgba(255,255,255,.09); --card:rgba(255,255,255,.035);
+  --doc:#F4EEE5; --olive:#3D4432; --oak:#A5825A; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',-apple-system,'Segoe UI',Arial,sans-serif;color:var(--white);background:linear-gradient(160deg,#0A2A28 0%,#0E3D3A 45%,#0A2A28 100%);background-attachment:fixed;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;background-image:radial-gradient(circle,var(--teal) 1px,transparent 1px);background-size:46px 46px;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding-inline:22px}
+h1,h2,h3{font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;line-height:1.08;letter-spacing:.01em;text-wrap:balance}
+h1{font-size:clamp(2rem,5.4vw,3.6rem)}
+h2{font-size:clamp(1.4rem,3.2vw,2.2rem)}
+h3{font-size:.95rem;letter-spacing:.04em}
+p{max-width:64ch;color:var(--mid);font-weight:300}
+.teal{color:var(--teal-bright)} .peach{color:var(--peach)}
+.label{font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-bright)}
+.label.peach{color:var(--peach)}
+a{color:var(--teal-bright)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--peach);outline-offset:3px}
+.glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,160,.14) 0%,transparent 70%);pointer-events:none;z-index:0}
+
+/* top bar */
+.top{position:relative;z-index:2;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-block:16px}
+.cc{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+.cc span{color:var(--teal-bright)}
+.skeen{display:inline-flex;align-items:center;gap:10px;background:var(--doc);color:var(--olive);border-radius:999px;padding:6px 16px 6px 14px}
+.skeen b{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:1.25rem;letter-spacing:.08em;font-variation-settings:"SOFT" 100,"opsz" 144;line-height:1}
+.skeen b i{font-style:normal;color:var(--oak)}
+.skeen small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#6D675B;font-weight:600}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{padding-block:80px 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.hero .lead{font-size:1.08rem;margin-top:1.2rem}
+.legend{display:grid;gap:12px}
+.legend div{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.legend p{font-size:.86rem}
+.tag{display:inline-flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:.32rem .7rem;white-space:nowrap}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.tag.auto{color:var(--teal-bright);background:rgba(0,212,188,.1);border:1px solid rgba(0,212,188,.35)}
+.tag.team{color:var(--peach);background:rgba(232,168,124,.1);border:1px solid rgba(232,168,124,.38)}
+.tag.doc{color:var(--olive);background:var(--doc);border:1px solid var(--doc)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:56px 40px;gap:30px}}
+
+/* scenarios */
+.scen .wrap{padding-block:40px 80px}
+.picker{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:26px}
+.pick{text-align:left;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 16px;color:var(--white);font-family:'Open Sans',sans-serif;transition:border-color .3s,background .3s,transform .4s var(--ease)}
+.pick:hover{transform:translateY(-2px);border-color:rgba(0,212,188,.35)}
+.pick[aria-selected="true"]{background:rgba(0,212,188,.08);border-color:var(--teal-bright)}
+.pick .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.66rem;letter-spacing:.18em;color:var(--peach)}
+.pick b{display:block;font-weight:600;font-size:.9rem;line-height:1.35;margin-top:.35rem}
+@media (max-width:980px){.picker{grid-template-columns:repeat(2,1fr)}.pick:last-child{grid-column:span 2}}
+@media (max-width:520px){.picker{grid-template-columns:1fr}.pick:last-child{grid-column:auto}}
+
+.stage{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;margin-top:22px;align-items:start}
+@media (max-width:860px){.stage{grid-template-columns:1fr}}
+.brief{position:sticky;top:20px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+@media (max-width:860px){.brief{position:relative;top:0}}
+.brief h3{font-size:1.15rem;margin-top:.5rem}
+.brief p{font-size:.9rem;margin-top:.6rem}
+.counts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.filters{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.filters .label{color:var(--faint)}
+.fbtns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.fbtn{cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.45rem .8rem}
+.fbtn[aria-pressed="true"]{background:var(--white);color:var(--dark);border-color:var(--white)}
+.replay{margin-top:18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dark);background:var(--teal-bright);border:0;border-radius:8px;padding:.7rem 1.1rem}
+
+.timeline{list-style:none;position:relative}
+.timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,rgba(0,212,188,.4),rgba(232,168,124,.25))}
+.st{position:relative;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:0 0 18px;opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease),filter .4s}
+.st.in{opacity:1;transform:none}
+.st.dim{filter:grayscale(1);opacity:.28}
+.st .dot{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--deep);border:1px solid var(--line);z-index:1}
+.st .dot i{width:10px;height:10px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 14px rgba(0,212,188,.7)}
+.st.team .dot i{background:var(--peach);box-shadow:0 0 14px rgba(232,168,124,.7)}
+.st.doc .dot{background:var(--doc)} .st.doc .dot i{background:var(--oak);box-shadow:none}
+.st .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.st.doc .card{background:rgba(244,238,229,.07);border-color:rgba(244,238,229,.35)}
+.st .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.st time{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--faint)}
+.st h4{font-family:'Open Sans',sans-serif;font-weight:600;font-size:.98rem;margin-top:.45rem;line-height:1.4}
+.st p{font-size:.86rem;margin-top:.25rem}
+.bub{margin-top:10px;max-width:440px;border-radius:16px;padding:10px 14px;font-size:.86rem;line-height:1.5;position:relative}
+.bub small{display:block;font-family:'Montserrat',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;opacity:.7}
+.bub.in-msg{background:rgba(255,255,255,.1);border-bottom-left-radius:4px;color:var(--white)}
+.bub.out-msg{margin-left:auto;background:var(--teal);color:#032522;border-bottom-right-radius:4px}
+.bub.out-msg a{color:#032522;text-decoration:underline}
+.chip{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:600;color:var(--peach-light);background:rgba(232,168,124,.08);border:1px dashed rgba(232,168,124,.35);border-radius:8px;padding:.3rem .6rem}
+
+/* week */
+.week{position:relative;overflow:hidden}
+.week .wrap{padding-block:70px}
+.cols{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px;margin-top:26px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}}
+.col{border-radius:18px;padding:26px;border:1px solid var(--line);background:var(--card)}
+.col.you{background:rgba(244,238,229,.06);border-color:rgba(244,238,229,.3)}
+.col.us{border-color:rgba(0,212,188,.35);background:rgba(0,212,188,.05)}
+.col h3{font-size:1.05rem}
+.col ul{list-style:none;margin-top:14px;display:grid;gap:10px}
+.col li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:.9rem;color:var(--mid)}
+.col li::before{content:"\2713";font-weight:700;color:var(--teal-bright)}
+.col.you li::before{color:var(--peach)}
+.col .foot{margin-top:16px;font-size:.8rem;color:var(--faint);font-style:italic}
+
+/* report */
+.rep .wrap{padding-block:30px 80px}
+.report{margin-top:24px;background:#0B2422;border:1px solid rgba(0,212,188,.25);border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.rhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid var(--line);background:rgba(0,212,188,.05)}
+.rhead b{font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.example{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dark);background:var(--peach);border-radius:6px;padding:.35rem .7rem}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.kpi{background:#0B2422;padding:18px 20px}
+.kpi .v{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--teal-bright);font-variant-numeric:tabular-nums;line-height:1}
+.kpi .k{font-size:.74rem;color:var(--faint);margin-top:6px;line-height:1.35}
+.rbody{display:grid;grid-template-columns:1.1fr .9fr;gap:1px;background:var(--line)}
+.rbody>div{background:#0B2422;padding:18px 22px}
+.bars{display:grid;gap:10px;margin-top:12px}
+.bar{display:grid;grid-template-columns:130px 1fr 40px;gap:10px;align-items:center;font-size:.78rem;color:var(--mid)}
+.bar i{display:block;height:10px;border-radius:6px;background:rgba(255,255,255,.07);position:relative;overflow:hidden}
+.bar i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:linear-gradient(90deg,var(--teal),var(--teal-bright));border-radius:6px}
+.bar span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--white);font-weight:600}
+.notes{list-style:none;display:grid;gap:10px;margin-top:12px}
+.notes li{font-size:.84rem;color:var(--mid);display:grid;grid-template-columns:18px 1fr;gap:8px}
+.notes li::before{content:"\2022";color:var(--peach);font-weight:700}
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}.rbody{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 36px}}
+
+/* close */
+.close .wrap{padding-block:30px 90px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.big{border-radius:20px;padding:30px}
+.big.you{background:var(--doc);color:var(--olive)}
+.big.you h3{color:var(--olive)} .big.you p,.big.you li{color:#4a4f3c}
+.big.us{background:rgba(0,212,188,.08);border:1px solid rgba(0,212,188,.35)}
+.big ul{margin-top:12px;padding-left:1.1rem;display:grid;gap:6px;font-size:.92rem}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.lnk{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;padding:.85rem 1.2rem}
+.lnk.solid{background:var(--teal-bright);color:var(--dark)}
+.lnk.ghost{border:1px solid var(--teal-bright);color:var(--teal-bright)}
+footer{border-top:1px solid var(--line);position:relative;z-index:1}
+footer .wrap{padding-block:22px;font-size:.76rem;color:var(--faint)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv,.st{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <span class="cc">Clinic <span>Catalyst</span></span>
+  <span class="skeen" aria-label="Prepared for SKEEN Clinic"><b>SKE<i>E</i>N</b><small>Spring Hill</small></span>
+</div></div>
+
+<section class="hero" aria-labelledby="h1">
+  <div class="glow" style="top:-220px;left:-220px" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <p class="label peach rv">Behind the scenes at SKEEN</p>
+      <h1 id="h1" class="rv" style="margin-top:.8rem">We run the system.<br><span class="teal">You see the patients.</span></h1>
+      <p class="lead rv">Every enquiry answered, every booking followed up, every yearly check remembered. This page shows what happens in the background at SKEEN, step by step, and exactly who does each part. Hint: it is almost never the doctors.</p>
+    </div>
+    <div class="legend rv" aria-label="Who does what">
+      <div><span class="tag auto">Automatic</span><p>Happens on its own, day or night, the moment it is needed. Set up and watched by our team.</p></div>
+      <div><span class="tag team">Clinic Catalyst team</span><p>Real people on our side: ads, content, follow-ups, checks and the weekly report.</p></div>
+      <div><span class="tag doc">Your doctors</span><p>The part only Dr Colin and Dr Ali can do: the patient in the room.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="scen" aria-labelledby="scen-h">
+  <div class="wrap">
+    <p class="label rv">Five real moments at SKEEN</p>
+    <h2 id="scen-h" class="rv" style="margin-top:.6rem">Pick a moment. <span class="peach">Watch what happens.</span></h2>
+    <div class="picker" role="tablist" aria-label="Scenarios"></div>
+    <div class="stage">
+      <aside class="brief" aria-live="polite">
+        <span class="label" id="b-kicker">Moment 1</span>
+        <h3 id="b-title"></h3>
+        <p id="b-text"></p>
+        <div class="counts" id="b-counts"></div>
+        <div class="filters">
+          <span class="label">Show steps done by</span>
+          <div class="fbtns" role="group" aria-label="Filter steps">
+            <button class="fbtn" type="button" data-f="all" aria-pressed="true">Everyone</button>
+            <button class="fbtn" type="button" data-f="auto" aria-pressed="false">Automatic</button>
+            <button class="fbtn" type="button" data-f="team" aria-pressed="false">Our team</button>
+            <button class="fbtn" type="button" data-f="doc" aria-pressed="false">Your doctors</button>
+          </div>
+        </div>
+        <button class="replay" type="button" id="replay">&#8635; Replay this moment</button>
+      </aside>
+      <ol class="timeline" id="timeline" role="tabpanel" aria-labelledby="b-title"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="week" aria-labelledby="week-h">
+  <div class="glow" style="bottom:-260px;right:-220px" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="label rv">A normal week</p>
+    <h2 id="week-h" class="rv" style="margin-top:.6rem">Your week. <span class="teal">Our week.</span></h2>
+    <div class="cols">
+      <div class="col you rv">
+        <span class="tag doc">Your doctors</span>
+        <h3 style="margin-top:12px">What Dr Colin and Dr Ali do</h3>
+        <ul>
+          <li>See patients, check skin, explain results</li>
+          <li>Treat, repair and follow up, as they already do</li>
+          <li>A film day with us when we need new footage</li>
+          <li>A two-minute look at the Monday report</li>
+        </ul>
+        <p class="foot">No logins to learn. No posts to write. No inbox to watch.</p>
+      </div>
+      <div class="col us rv">
+        <span class="tag team">Clinic Catalyst team</span>
+        <h3 style="margin-top:12px">What we do</h3>
+        <ul>
+          <li>Run the ads and the landing pages, and adjust them every week</li>
+          <li>Edit the film footage and schedule the posts and reels</li>
+          <li>Watch every enquiry, and make sure each one gets a reply and a next step</li>
+          <li>Keep the follow-up messages running until people book in HotDoc</li>
+          <li>Load recall reminders so yearly skin checks never slip, especially before summer</li>
+          <li>Send review requests after appointments, to every patient</li>
+          <li>Check every message and ad against AHPRA rules before it goes out</li>
+          <li>Send you one clear report every Monday</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rep" aria-labelledby="rep-h">
+  <div class="wrap">
+    <p class="label rv">Every Monday</p>
+    <h2 id="rep-h" class="rv" style="margin-top:.6rem">One screen. <span class="peach">Two minutes.</span></h2>
+    <p class="rv" style="margin-top:.8rem">This is the only thing we ask you to look at. It answers one question: what happened last week, and what are we doing about it?</p>
+    <div class="report rv" role="img" aria-label="Example weekly report with made-up figures">
+      <div class="rhead"><b>SKEEN weekly report &middot; week of 3 November</b><span class="example">Example figures, not SKEEN results</span></div>
+      <div class="kpis">
+        <div class="kpi"><div class="v" data-count="41">0</div><div class="k">New enquiries</div></div>
+        <div class="kpi"><div class="v" data-count="26">0</div><div class="k">Booked in HotDoc</div></div>
+        <div class="kpi"><div class="v" data-count="100" data-suffix="%">0</div><div class="k">Enquiries replied to within five minutes</div></div>
+        <div class="kpi"><div class="v" data-count="9">0</div><div class="k">New Google reviews</div></div>
+      </div>
+      <div class="rbody">
+        <div>
+          <span class="label">Where bookings came from</span>
+          <div class="bars">
+            <div class="bar"><span>Skin check ads</span><i style="--w:78%"></i><span>11</span></div>
+            <div class="bar"><span>Family bookings</span><i style="--w:43%"></i><span>6</span></div>
+            <div class="bar"><span>Recall reminders</span><i style="--w:36%"></i><span>5</span></div>
+            <div class="bar"><span>Skin and cosmetic site</span><i style="--w:21%"></i><span>3</span></div>
+            <div class="bar"><span>Google search</span><i style="--w:7%"></i><span>1</span></div>
+          </div>
+        </div>
+        <div>
+          <span class="label peach">What we are doing this week</span>
+          <ul class="notes">
+            <li>Moving budget to the family skin check ad, it is booking couples</li>
+            <li>Loading 60 more recall reminders ahead of summer</li>
+            <li>Posting Dr Ali's sunspot video on Wednesday</li>
+            <li>Nothing needed from the doctors this week</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close" aria-labelledby="close-h">
+  <div class="wrap">
+    <p class="label rv">In one line</p>
+    <h2 id="close-h" class="rv" style="margin-top:.6rem">You look after the skin. <span class="teal">We look after everything around it.</span></h2>
+    <div class="split">
+      <div class="big you rv">
+        <span class="tag doc">What you do</span>
+        <h3 style="margin-top:12px">The doctors</h3>
+        <ul><li>See your patients</li><li>Show up for the film days</li><li>Glance at Monday's report</li></ul>
+      </div>
+      <div class="big us rv">
+        <span class="tag team">What we do</span>
+        <h3 style="margin-top:12px">Clinic Catalyst</h3>
+        <ul style="color:var(--mid)"><li>The ads, the landing pages and the content</li><li>Every enquiry, follow-up, reminder and review request</li><li>The checks, the reporting and the changes each week</li></ul>
+      </div>
+    </div>
+    <div class="links rv">
+      <a class="lnk solid" href="https://clinic-catalyst-au.github.io/cc-report-skeen/">Back to your growth plan &#8594;</a>
+      <a class="lnk ghost" href="https://clinic-catalyst-au.github.io/cc-report-skeen/site/">See the website concept &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Prepared for SKEEN Clinic by Clinic Catalyst. The patient names, messages and report figures on this page are examples to show how the system works, not real patients or SKEEN results. Automatic messages never give medical advice.</div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var BOOK = 'https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors';
+  var S = [
+    { t:'A worried message at 9:12pm', k:'Moment 1', d:'Jess notices a spot on her shoulder that looks different, and messages SKEEN on Instagram late at night. Nobody at the clinic is awake, and nobody needs to be.', steps:[
+      {w:'auto', time:'9:12pm', h:'Her message arrives on Instagram', msg:['in','Jess on Instagram','Hi, I have noticed a spot on my shoulder that looks different to how it was. Can someone have a look at it?']},
+      {w:'auto', time:'9:12pm', h:'A warm reply goes back straight away', msg:['out','SKEEN','Hi Jess, thank you for reaching out. A doctor will look at your message and we will help you book a skin check. If it is urgent, please call 000 or see your GP. You can also book online here: <a href="'+BOOK+'" target="_blank" rel="noopener">HotDoc</a>']},
+      {w:'auto', time:'9:13pm', h:'Saved to the clinic list, tagged "spot check"', p:'Her name, her message and where she came from, all in one place instead of an inbox.'},
+      {w:'team', time:'8:15am', h:'Our team checks the overnight enquiries', p:'Anything that needs a doctor to look at is flagged to the clinic with the whole message attached.'},
+      {w:'auto', time:'8:30am', h:'A morning follow-up with times', msg:['out','SKEEN by text','Morning Jess. Dr Ali has skin check times this week, and he can see you with or without a referral. Book here: <a href="'+BOOK+'" target="_blank" rel="noopener">HotDoc</a>']},
+      {w:'auto', time:'9:04am', h:'She books in HotDoc', chip:'Booked. Confirmation and parking details sent.'},
+      {w:'doc', time:'Her appointment', h:'Dr Ali checks her skin and explains what he sees', p:'Talk first, a head-to-toe check, results in plain words, and her next check booked before she leaves.'}
+    ]},
+    { t:'She books for herself and her husband', k:'Moment 2', d:'Sarah sees a "book a skin check for your family too" ad, takes the 30-second skin check-in on the website and picks "I am booking for someone I love".', steps:[
+      {w:'team', time:'Ongoing', h:'Our team runs the family skin check campaign', p:'Written, filmed, launched and adjusted by us, aimed at the women who book for the whole family.'},
+      {w:'auto', time:'7:40pm', h:'Her skin check-in is captured', p:'Two people, both due a skin check, saved and tagged.'},
+      {w:'auto', time:'7:41pm', h:'A text with times for two', msg:['out','SKEEN by text','Hi Sarah, lovely that you are booking for both of you. Here are skin check times this week: <a href="'+BOOK+'" target="_blank" rel="noopener">HotDoc</a>']},
+      {w:'auto', time:'7:52pm', h:'Two skin checks booked in HotDoc', chip:'Booked for Sarah and Tom.'},
+      {w:'auto', time:'The day before', h:'A friendly reminder with parking details', msg:['out','SKEEN by text','See you both tomorrow. Parking is in the same building, and we are on Level 1.']},
+      {w:'doc', time:'Their appointments', h:'Dr Colin and Dr Ali check both of them, head to toe', p:'Results explained in plain words, and both next checks booked.'},
+      {w:'auto', time:'That afternoon', h:'A review request to each of them', msg:['out','SKEEN by text','Thanks for coming in today. If you have a minute, a Google review helps other people find us.']}
+    ]},
+    { t:'A yearly skin check, due before summer', k:'Moment 3', d:'Mark had his skin check last spring. It is almost a year, summer is coming, and like most people he has not thought about it.', steps:[
+      {w:'team', time:'Early spring', h:'Our team loads the recall reminders', p:'Everyone due a skin check in the next two months, timed to go out before summer.'},
+      {w:'auto', time:'11 months later', h:'A recall reminder by text', msg:['out','SKEEN by text','Hi Mark, it is almost a year since your last skin check at SKEEN. Summer is on its way, would you like to book your next one? <a href="'+BOOK+'" target="_blank" rel="noopener">HotDoc</a>']},
+      {w:'auto', time:'4 days later', h:'No booking yet, so a gentle second nudge', msg:['out','SKEEN by text','Just a quick reminder, Mark. Your yearly skin check only takes one visit.']},
+      {w:'auto', time:'That evening', h:'He books in HotDoc', chip:'Booked. Recall marked complete.'},
+      {w:'team', time:'Monday', h:'Our team reports who has and has not rebooked', p:'Anyone still not booked gets one more friendly reminder later.'},
+      {w:'doc', time:'His appointment', h:'His 3D image is compared with last year', p:'The 3D total body image takes about three seconds, and his doctor compares every spot with last time.'}
+    ]},
+    { t:'An enquiry from the skin and cosmetic medicine site', k:'Moment 4', d:'Priya has pigment on her cheeks that has bothered her for years. She finds the skin and cosmetic medicine website and sends an enquiry at lunchtime.', steps:[
+      {w:'auto', time:'12:30pm', h:'Her enquiry is saved, tagged "skin confidence"', msg:['in','Website enquiry','I have pigment on my cheeks that has been there for years. Is there anything that can help?']},
+      {w:'auto', time:'12:31pm', h:'A warm reply explains the first step', msg:['out','SKEEN by text','Hi Priya, thanks for getting in touch. The first step is a skin consultation, where your doctor looks at your skin and talks you through what might suit you. Book here: <a href="'+BOOK+'" target="_blank" rel="noopener">HotDoc</a>']},
+      {w:'auto', time:'Over 5 days', h:'If she does not book, an education email follows', p:'"How a skin consultation works", written in plain words, then one more gentle reminder.'},
+      {w:'team', time:'Meanwhile', h:'Our team shows her short videos from the doctors', p:'Remarketing ads with Dr Colin and Dr Ali, so she gets to know them while she decides.'},
+      {w:'auto', time:'Day 4', h:'She books a skin consultation in HotDoc', chip:'Booked. Tagged skin confidence.'},
+      {w:'doc', time:'Her consultation', h:'Her doctor assesses her skin and explains her options', p:'Honest about what suits her and what does not, before anything is booked.'}
+    ]},
+    { t:'After skin cancer surgery', k:'Moment 5', d:'Anne has had a skin cancer removed. The care continues after she goes home, and so does the looking after.', steps:[
+      {w:'auto', time:'The next day', h:'A check-in text with her aftercare information', msg:['out','SKEEN by text','Hi Anne, just checking in after your procedure. Your aftercare information is here. If anything worries you, call us on (07) 3188 5474, or 000 in an emergency.']},
+      {w:'auto', time:'1 week later', h:'A reminder about her follow-up appointment', chip:'Follow-up already booked in HotDoc.'},
+      {w:'doc', time:'Her follow-up', h:'Her doctor checks how it is healing', p:'The same doctor who did the surgery, explaining what happens next.'},
+      {w:'auto', time:'6 weeks later', h:'An email about scar care, in case she would like help', p:'Gentle information about scar care consultations, with no pressure.'},
+      {w:'auto', time:'After her visit', h:'A review request, sent to every patient', msg:['out','SKEEN by text','Thank you for trusting us with your care, Anne. If you have a minute, a Google review helps other people find us.']},
+      {w:'team', time:'Always', h:'Our team keeps every message within AHPRA rules', p:'Automatic messages never give medical advice, and reviews are never reused in ads.'}
+    ]}
+  ];
+  var TAG = {auto:'<span class="tag auto">Automatic</span>', team:'<span class="tag team">Clinic Catalyst team</span>', doc:'<span class="tag doc">Your doctors</span>'};
+  var picker = document.querySelector('.picker'), tl = document.getElementById('timeline');
+  var current = 0, timers = [], filter = 'all';
+  S.forEach(function(s, i){
+    var b = document.createElement('button');
+    b.className = 'pick'; b.type = 'button'; b.setAttribute('role','tab'); b.id = 'tab'+i;
+    b.setAttribute('aria-selected', i===0 ? 'true' : 'false'); b.setAttribute('aria-controls','timeline');
+    b.innerHTML = '<span class="n">Moment '+(i+1)+'</span><b>'+s.t+'</b>';
+    b.addEventListener('click', function(){ select(i); });
+    b.addEventListener('keydown', function(e){ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){ var n=(i+(e.key==='ArrowRight'?1:S.length-1))%S.length; document.getElementById('tab'+n).focus(); select(n);} });
+    picker.appendChild(b);
+  });
+  function select(i){
+    current = i;
+    document.querySelectorAll('.pick').forEach(function(p, j){ p.setAttribute('aria-selected', j===i ? 'true':'false'); });
+    render();
+  }
+  function render(){
+    timers.forEach(clearTimeout); timers = [];
+    var s = S[current];
+    document.getElementById('b-kicker').textContent = s.k;
+    document.getElementById('b-title').textContent = s.t;
+    document.getElementById('b-text').textContent = s.d;
+    var c = {auto:0, team:0, doc:0}; s.steps.forEach(function(x){ c[x.w]++; });
+    document.getElementById('b-counts').innerHTML = TAG.auto.replace('Automatic', c.auto+' automatic') + TAG.team.replace('Clinic Catalyst team', c.team+' our team') + TAG.doc.replace('Your doctors', c.doc+' your doctors');
+    tl.innerHTML = s.steps.map(function(x){
+      var msg = '';
+      if (x.msg) msg = '<div class="bub '+(x.msg[0]==='in'?'in-msg':'out-msg')+'"><small>'+x.msg[1]+'</small>'+x.msg[2]+'</div>';
+      return '<li class="st '+x.w+'" data-w="'+x.w+'"><span class="dot" aria-hidden="true"><i></i></span><div class="card"><div class="meta"><time>'+x.time+'</time>'+TAG[x.w]+'</div><h4>'+x.h+'</h4>'+(x.p?'<p>'+x.p+'</p>':'')+msg+(x.chip?'<span class="chip">'+x.chip+'</span>':'')+'</div></li>';
+    }).join('');
+    var items = tl.querySelectorAll('.st');
+    items.forEach(function(el, n){ if (reduce) el.classList.add('in'); else timers.push(setTimeout(function(){ el.classList.add('in'); }, 150 + n*420)); });
+    applyFilter();
+  }
+  function applyFilter(){ tl.querySelectorAll('.st').forEach(function(el){ el.classList.toggle('dim', filter!=='all' && el.dataset.w!==filter); }); }
+  document.querySelectorAll('.fbtn').forEach(function(b){ b.addEventListener('click', function(){ filter = b.dataset.f; document.querySelectorAll('.fbtn').forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); }); applyFilter(); }); });
+  document.getElementById('replay').addEventListener('click', render);
+  render();
+
+  // reveals
+  var rv = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) rv.forEach(function(e){ e.classList.add('in'); });
+  else { var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }); },{threshold:.08}); rv.forEach(function(e){ io.observe(e); }); }
+  // count-up
+  function count(el){ var t=parseFloat(el.dataset.count), suf=el.dataset.suffix||''; if(reduce){ el.textContent=t+suf; return; } var st=null; function f(ts){ if(!st) st=ts; var p=Math.min(1,(ts-st)/1300); p=1-Math.pow(1-p,3); el.textContent=Math.round(t*p)+suf; if(p<1) requestAnimationFrame(f); } requestAnimationFrame(f); }
+  var ks = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window && !reduce) { var co = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ count(x.target); co.unobserve(x.target); } }); },{threshold:.5}); ks.forEach(function(k){ co.observe(k); }); }
+  else ks.forEach(count);
+})();
+</script>
+</body>
+</html>

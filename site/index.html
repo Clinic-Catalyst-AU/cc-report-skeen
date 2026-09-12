@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SKEEN Clinic | Skin checks, skin cancer care and skin medicine | Spring Hill, Brisbane</title>
+<meta name="description" content="Skin checks, skin cancer care, and skin and cosmetic medicine in Spring Hill, Brisbane, with Dr Colin McTari and Dr Ali. Every step explained.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..500,0..100&family=Figtree:wght@300..600&family=Fahkwang:wght@200;300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orchid:#FBF8F3; --linen:#F4EEE5; --wall:#E8DFD3; --taupe:#B8AB9A; --oak:#D9C2A2; --oak-deep:#A5825A;
+  --olive:#3D4432; --olive-deep:#2A2F23; --sage:#B8C2AD; --sage-soft:#DDE3D5; --blush:#ECD4CA; --blush-deep:#C8998A;
+  --gold:#C49B45; --gold-soft:#E4CC93; --ink:#2A2922; --mute:#6D675B; --line:rgba(61,68,50,.14);
+  --ease:cubic-bezier(.16,1,.3,1); --wipe:cubic-bezier(.77,0,.175,1);
+  --serif:'Fraunces',Georgia,'Times New Roman',serif; --sans:'Figtree',-apple-system,'Segoe UI',Arial,sans-serif; --thin:'Fahkwang','Figtree',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:light}
+body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--linen);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.015em;text-wrap:balance;font-variation-settings:"opsz" 120}
+h1{font-size:clamp(2.6rem,6.6vw,5.6rem)}
+h2{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h3{font-size:1.45rem;line-height:1.15}
+h1 em,h2 em{font-style:italic;font-weight:300;color:var(--oak-deep)}
+p{max-width:62ch}
+.wrap{max-width:1220px;margin:0 auto;padding-inline:24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--oak-deep)}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.6}
+.lead{font-size:1.14rem;color:var(--mute);margin-top:1.1rem}
+.statement{font-family:var(--thin);font-weight:200;font-size:clamp(1.6rem,3.4vw,2.7rem);line-height:1.25;letter-spacing:.005em;color:var(--olive)}
+section{position:relative;scroll-margin-top:72px}
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;padding:1rem 1.7rem;border-radius:999px;font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--olive);color:var(--olive);background:transparent;transition:transform .5s var(--ease),background .4s,color .4s,border-color .4s;overflow:hidden;cursor:pointer}
+.btn.solid{background:var(--olive);color:var(--orchid)}
+.btn.gold{background:var(--blush);border-color:var(--blush);color:var(--olive-deep)}
+.btn:hover{background:var(--olive-deep);color:var(--orchid);border-color:var(--olive-deep)}
+.btn.gold:hover{background:var(--orchid);border-color:var(--orchid);color:var(--olive-deep)}
+.btn .arr{transition:transform .5s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:2rem}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* announcement + header */
+.note{background:var(--olive-deep);color:var(--sage-soft);font-size:.78rem;letter-spacing:.04em;text-align:center;padding:9px 16px}
+.note a{color:var(--gold-soft);text-underline-offset:3px}
+header{position:sticky;top:0;z-index:40;background:rgba(244,238,229,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);animation:drop .9s var(--ease) both}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px;transition:height .45s var(--ease)}
+body.scrolled .nav{height:62px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .wm{font-family:var(--serif);font-style:normal;font-weight:400;font-size:1.85rem;line-height:1;letter-spacing:.08em;text-transform:none;color:#3D4432;font-variation-settings:"SOFT" 100,"opsz" 144}
+.brand .wm i{font-style:normal;color:#A5825A}
+.brand span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);line-height:1.3}
+.links{display:flex;gap:26px;font-size:.84rem;font-weight:500}
+.links a{text-decoration:none;position:relative;padding-bottom:3px;white-space:nowrap}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--oak-deep);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.links a:hover::after{transform:scaleX(1);transform-origin:left}
+.navcta{display:flex;align-items:center;gap:10px}
+.navcta .tel{font-size:.84rem;font-weight:600;text-decoration:none;color:var(--olive)}
+.navcta .btn{padding:.7rem 1.2rem;font-size:.72rem}
+@media (max-width:1200px){.links{display:none}.navcta .tel{display:none}.brand .loc{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:var(--orchid);overflow:hidden;background:var(--olive-deep)}
+.hero .film{position:absolute;inset:0;overflow:hidden}
+.hero .film img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:kb 28s ease-in-out infinite alternate;filter:saturate(.95) contrast(.98)}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16) translate(-2%,1.5%)}}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(95deg,rgba(42,47,35,.9) 0%,rgba(42,47,35,.66) 40%,rgba(42,47,35,.12) 75%),linear-gradient(0deg,rgba(42,47,35,.72) 0%,rgba(42,47,35,0) 45%)}
+.hero .wrap{position:relative;width:100%;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;padding-block:140px 70px}
+.hero h1{color:var(--orchid)}
+.hero h1 em{color:var(--gold-soft)}
+.hero .lead{color:rgba(251,248,243,.84);font-size:1.18rem;max-width:52ch}
+.hero .eyebrow{color:var(--gold-soft)}
+.hero .btn{border-color:rgba(251,248,243,.6);color:var(--orchid)}
+.hero .btn:hover{background:rgba(251,248,243,.14);border-color:var(--orchid)}
+.hero .btn.gold{color:var(--olive-deep);border-color:var(--blush)}
+.hero .btn.gold:hover{background:var(--orchid);color:var(--olive-deep)}
+.hl{display:block;overflow:hidden;padding-bottom:.06em}
+.hl>span{display:block;transform:translateY(112%);animation:rise 1.15s var(--ease) forwards}
+.hl:nth-child(2)>span{animation-delay:.14s}.hl:nth-child(3)>span{animation-delay:.28s}
+@keyframes rise{to{transform:none}}
+.fade{opacity:0;animation:fadeup 1.1s var(--ease) forwards}
+.fade.d1{animation-delay:.1s}.fade.d2{animation-delay:.7s}.fade.d3{animation-delay:.9s}.fade.d4{animation-delay:1.1s}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.shot{justify-self:end;width:min(360px,100%);background:rgba(251,248,243,.1);border:1px solid rgba(251,248,243,.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:20px 22px;border-radius:18px}
+.shot .rec{display:flex;align-items:center;gap:10px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.shot .rec i{width:9px;height:9px;border-radius:50%;background:#E0735E;animation:blink 1.4s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+.shot h3{font-size:1.2rem;margin:.6rem 0 .4rem;color:var(--orchid)}
+.shot p{font-size:.88rem;color:rgba(251,248,243,.78)}
+.shot .play{margin-top:14px;display:flex;align-items:center;gap:12px;font-size:.78rem;color:var(--orchid);background:none;border:0;cursor:pointer;font-family:var(--sans);font-weight:600;letter-spacing:.04em}
+.playdot{position:relative;width:46px;height:46px;border-radius:50%;background:var(--orchid);display:grid;place-items:center;flex:none}
+.playdot::before{content:"";border-left:13px solid var(--olive);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.playdot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(251,248,243,.6);animation:ring 2.4s var(--ease) infinite}
+@keyframes ring{from{transform:scale(.9);opacity:.9}to{transform:scale(1.45);opacity:0}}
+.stamp{display:flex;align-items:center;gap:16px;margin-top:2.2rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,248,243,.72)}
+.stamp b{font-family:var(--serif);font-size:2.2rem;font-weight:400;letter-spacing:0;color:var(--orchid);line-height:1;font-variant-numeric:tabular-nums}
+.stamp .stars{color:var(--gold-soft);letter-spacing:.14em;font-size:.9rem}
+.cue{position:absolute;left:24px;bottom:24px;width:1px;height:60px;background:rgba(251,248,243,.25);overflow:hidden}
+.cue::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--gold-soft);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{to{top:100%}}
+@media (max-width:860px){.hero{min-height:0}.hero .wrap{grid-template-columns:1fr;padding-block:110px 56px}.shot{justify-self:start}.hero .veil{background:linear-gradient(180deg,rgba(42,47,35,.55),rgba(42,47,35,.9))}.cue{display:none}}
+
+/* ticker */
+.ticker{background:var(--olive);color:var(--sage-soft);overflow:hidden;border-top:1px solid rgba(251,248,243,.08)}
+.ticker .track{display:flex;width:max-content;animation:tick 52s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker span{display:flex;align-items:center;gap:28px;padding:15px 28px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.ticker span i{font-style:normal;color:var(--gold-soft)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* for her */
+.her{background:var(--orchid);overflow:hidden}
+.her .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding-block:120px}
+.her .pic{position:relative}
+.her .pic .frame{border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:4/5}
+.her .pic img{width:100%;height:100%;object-fit:cover;object-position:38% 50%}
+.her .pic .tag{position:absolute;right:-18px;bottom:34px;background:var(--blush);color:var(--olive-deep);padding:18px 22px;border-radius:16px;max-width:240px;font-size:.9rem;box-shadow:0 30px 60px -30px rgba(42,47,35,.4)}
+.her .pic .tag b{display:block;font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.15;margin-bottom:.3rem}
+.her .glow{position:absolute;width:520px;height:520px;border-radius:50%;background:var(--blush);filter:blur(110px);opacity:.55;left:-180px;top:-140px;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.her .copy{position:relative}
+.checks{list-style:none;margin-top:1.8rem;display:grid;gap:12px}
+.checks li{display:flex;gap:14px;align-items:flex-start;font-size:1rem;color:var(--ink)}
+.checks li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--sage-soft) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 12.5l4 4 8-9' fill='none' stroke='%233D4432' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/14px no-repeat}
+.aside{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--oak-deep)}
+@media (max-width:860px){.her .wrap{grid-template-columns:1fr;gap:48px;padding-block:80px}.her .pic .tag{right:12px}}
+
+/* doctors */
+.docs{background:var(--linen)}
+.docs .wrap{padding-block:120px}
+.docs .head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.docs .head .statement{justify-self:end;max-width:30ch}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:64px}
+.doc{position:relative;background:var(--orchid);border-radius:28px;overflow:hidden;border:1px solid var(--line);transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.doc:hover{transform:translateY(-6px);box-shadow:0 40px 80px -40px rgba(42,47,35,.35)}
+.doc:nth-child(2){margin-top:64px}
+.doc .portrait{position:relative;display:flex;justify-content:center;padding:36px 28px 0;overflow:hidden}
+.doc .portrait .frame{position:relative;z-index:1;width:min(380px,100%);aspect-ratio:1/1;border-radius:50%;background:var(--blush);overflow:hidden;box-shadow:0 30px 60px -40px rgba(42,47,35,.45)}
+.doc:nth-child(2) .portrait .frame{background:var(--sage)}
+.doc .portrait .frame img{position:absolute;left:50%;bottom:0;height:88%;width:auto;max-width:none;transform:translateX(-50%);transform-origin:bottom center;transition:transform 1.2s var(--ease)}
+.doc:hover .portrait .frame img{transform:translateX(-50%) scale(1.04)}
+.doc .portrait .nm{position:absolute;z-index:0;left:24px;top:22px;font-family:var(--serif);font-size:7rem;line-height:.8;color:var(--olive);opacity:.07;font-style:italic}
+.doc .body{padding:30px 32px 34px}
+.doc .role{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oak-deep);font-weight:600}
+.doc h3{font-size:2.1rem;margin:.4rem 0 .2rem}
+.doc .full{font-size:.84rem;color:var(--mute)}
+.facts{list-style:none;margin-top:1.3rem;display:grid;gap:9px;border-top:1px solid var(--line);padding-top:1.2rem}
+.facts li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:.93rem;color:var(--ink)}
+.facts li::before{content:"";width:6px;height:6px;margin-top:.62em;border-radius:50%;background:var(--gold)}
+.creds{margin-top:1.1rem;font-size:.78rem;color:var(--mute);line-height:1.55}
+.series{margin-top:84px}
+.series .top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.eps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.ep{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;background:var(--olive-deep);color:var(--orchid);display:flex;flex-direction:column;justify-content:space-between;padding:20px;cursor:pointer;border:0;text-align:left;font-family:var(--sans)}
+.ep img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.8);transition:transform 1.4s var(--ease),opacity .6s}
+.ep:hover img{transform:scale(1.08);opacity:.55}
+.ep .n{position:relative;font-family:var(--serif);font-size:3rem;line-height:1;color:var(--gold-soft);font-style:italic}
+.ep .t{position:relative}
+.ep .t b{display:block;font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.15}
+.ep .t small{display:block;margin-top:.5rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,248,243,.7)}
+.ep .playdot{position:absolute;top:18px;right:18px;width:40px;height:40px}
+.ep .playdot::before{border-left-width:11px;border-top-width:7px;border-bottom-width:7px}
+@media (max-width:980px){.eps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){.docs .head{grid-template-columns:1fr}.docs .head .statement{justify-self:start}.pair{grid-template-columns:1fr}.doc:nth-child(2){margin-top:0}.docs .wrap{padding-block:80px}.doc .portrait{padding:28px 20px 0}}
+
+/* journey */
+.journey{background:var(--olive-deep);color:var(--orchid)}
+.journey .wrap{padding-block:120px}
+.journey h2{color:var(--orchid)}
+.journey h2 em{color:var(--gold-soft)}
+.journey .lead{color:rgba(251,248,243,.72)}
+.jgrid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;margin-top:64px;align-items:start}
+.jpic{position:sticky;top:110px;border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:var(--olive)}
+.jpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .9s var(--ease),transform 1.6s var(--ease)}
+.jpic img.on{opacity:1;transform:scale(1)}
+.jpic img.contain{object-fit:contain;background:var(--orchid);padding:40px}
+.jpic .count{position:absolute;left:22px;bottom:20px;font-family:var(--serif);font-style:italic;font-size:4.4rem;line-height:1;color:var(--orchid);text-shadow:0 10px 40px rgba(0,0,0,.35)}
+.jpic .bar{position:absolute;left:0;top:0;height:3px;background:var(--gold);width:0;transition:width .8s var(--ease)}
+.steps{list-style:none;position:relative}
+.steps::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:1px;background:rgba(251,248,243,.14)}
+.step{position:relative;display:grid;grid-template-columns:44px 1fr;gap:22px;padding:34px 0;min-height:36vh;opacity:.38;transition:opacity .6s var(--ease)}
+.step.on{opacity:1}
+.step .k{width:44px;height:44px;border-radius:50%;border:1px solid rgba(251,248,243,.3);display:grid;place-items:center;font-family:var(--serif);font-size:1.05rem;background:var(--olive-deep);transition:background .5s,color .5s,border-color .5s}
+.step.on .k{background:var(--gold);border-color:var(--gold);color:var(--olive-deep)}
+.step h3{color:var(--orchid);font-size:1.75rem}
+.step p{margin-top:.6rem;color:rgba(251,248,243,.78)}
+.step .chip{display:inline-block;margin-top:1rem;padding:.4rem .8rem;border-radius:999px;background:rgba(228,204,147,.14);color:var(--gold-soft);font-size:.74rem;letter-spacing:.04em}
+@media (max-width:860px){.jgrid{grid-template-columns:1fr;gap:28px}.jpic{position:relative;top:0;aspect-ratio:16/11}.step{min-height:0;opacity:1;padding:24px 0}.journey .wrap{padding-block:80px}}
+
+/* education */
+.learn{background:var(--orchid)}
+.learn .wrap{padding-block:120px}
+.lgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.card{position:relative;background:var(--linen);border-radius:22px;padding:28px 26px 30px;border:1px solid var(--line);overflow:hidden;transition:transform .6s var(--ease),background .5s}
+.card:hover{transform:translateY(-6px);background:var(--wall)}
+.card .ic{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;margin-bottom:1.3rem;background:var(--sage-soft)}
+.card:nth-child(2) .ic{background:var(--blush)}
+.card:nth-child(3) .ic{background:var(--gold-soft)}
+.card:nth-child(4) .ic{background:var(--wall)}
+.card h3{font-size:1.4rem}
+.card .aka{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--oak-deep);margin-top:.35rem;font-weight:600}
+.card p{margin-top:.9rem;font-size:.95rem;color:var(--mute)}
+.card .how{margin-top:1.1rem;padding-top:1rem;border-top:1px dashed var(--line);font-size:.9rem;color:var(--ink)}
+.card .how b{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:.3rem}
+.fine{font-size:.82rem;color:var(--mute);margin-top:1.6rem}
+.watch{display:flex;align-items:center;gap:16px;margin-top:2.4rem;padding:18px 22px;border-radius:18px;background:var(--olive);color:var(--orchid);max-width:520px;text-decoration:none;border:0;cursor:pointer;font-family:var(--sans);text-align:left}
+.watch .playdot{background:var(--gold-soft)}
+.watch b{display:block;font-family:var(--serif);font-weight:400;font-size:1.15rem}
+.watch small{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+@media (max-width:1060px){.lgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.lgrid{grid-template-columns:1fr}.learn .wrap{padding-block:80px}}
+
+/* machines */
+.tech{background:var(--linen)}
+.tech .wrap{padding-block:120px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:44px}
+.tab{padding:.7rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:var(--orchid);font-family:var(--sans);font-size:.84rem;font-weight:500;color:var(--ink);cursor:pointer;transition:background .4s,color .4s,border-color .4s}
+.tab[aria-selected="true"]{background:var(--olive);color:var(--orchid);border-color:var(--olive)}
+.panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;margin-top:34px;background:var(--orchid);border-radius:30px;padding:44px;border:1px solid var(--line)}
+.panel[hidden]{display:none!important}
+.panel .mimg{position:relative;aspect-ratio:1/1;border-radius:24px;background:radial-gradient(circle at 50% 60%,var(--blush) 0%,var(--wall) 70%);display:grid;place-items:center;overflow:hidden}
+.panel .mimg img{max-height:88%;width:auto;mix-blend-mode:multiply;animation:float 7s ease-in-out infinite}
+.panel .mimg.text{background:radial-gradient(circle at 50% 60%,var(--gold-soft) 0%,var(--wall) 70%)}
+.panel .mimg.text span{font-family:var(--serif);font-style:italic;font-size:clamp(3rem,7vw,5.5rem);color:var(--olive);opacity:.85}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.panel h3{font-size:2.2rem}
+.panel .brandname{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oak-deep);font-weight:600;margin-top:.5rem}
+.rows{margin-top:1.6rem;display:grid;gap:16px}
+.rows div{display:grid;grid-template-columns:140px 1fr;gap:18px;padding-top:14px;border-top:1px solid var(--line)}
+.rows dt{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);font-weight:600;padding-top:.25rem}
+.rows dd{color:var(--ink)}
+.rows dd.film{color:var(--oak-deep);font-style:italic}
+@media (max-width:860px){.panel{grid-template-columns:1fr;padding:26px;gap:28px}.rows div{grid-template-columns:1fr;gap:4px}.tech .wrap{padding-block:80px}}
+
+/* two sides */
+.sides{background:var(--orchid)}
+.sides .wrap{padding-block:120px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+.side{border-radius:30px;padding:42px 40px;position:relative;overflow:hidden}
+.side.health{background:var(--sage-soft)}
+.side.conf{background:var(--blush)}
+.side .big{position:absolute;right:-10px;bottom:-40px;font-family:var(--serif);font-style:italic;font-size:10rem;line-height:1;color:var(--olive);opacity:.06;pointer-events:none}
+.side h3{font-size:2.3rem}
+.side>p{margin-top:.6rem;color:var(--mute)}
+.concerns{list-style:none;margin-top:1.8rem;display:grid;gap:0}
+.concerns a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-top:1px solid rgba(61,68,50,.18);text-decoration:none;font-family:var(--serif);font-size:1.28rem;color:var(--olive-deep);transition:padding-left .5s var(--ease)}
+.concerns a:hover{padding-left:10px}
+.concerns a span{font-family:var(--sans);font-size:1.1rem;transition:transform .5s var(--ease)}
+.concerns a:hover span{transform:translateX(6px)}
+.bridge{margin-top:22px;border-radius:30px;background:var(--olive);color:var(--orchid);padding:34px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+.bridge .sym{font-family:var(--serif);font-style:italic;font-size:3.4rem;color:var(--gold-soft);line-height:1}
+.bridge h3{color:var(--orchid)}
+.bridge p{color:rgba(251,248,243,.78);margin-top:.3rem}
+@media (max-width:860px){.sgrid{grid-template-columns:1fr}.bridge{grid-template-columns:1fr;gap:14px}.side{padding:32px 26px}.sides .wrap{padding-block:80px}}
+
+/* check-in quiz */
+.quiz{background:var(--olive);color:var(--orchid);overflow:hidden}
+.quiz .wrap{padding-block:110px;display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.quiz h2{color:var(--orchid)}
+.quiz h2 em{color:var(--gold-soft)}
+.quiz .lead{color:rgba(251,248,243,.75)}
+.quiz .glow{position:absolute;width:600px;height:600px;border-radius:50%;background:var(--gold);filter:blur(140px);opacity:.14;right:-200px;bottom:-260px;animation:breathe 10s ease-in-out infinite}
+.qbox{position:relative;background:var(--orchid);color:var(--ink);border-radius:28px;padding:34px;min-height:380px;box-shadow:0 50px 100px -50px rgba(0,0,0,.5)}
+.qprog{height:4px;border-radius:4px;background:var(--wall);overflow:hidden}
+.qprog i{display:block;height:100%;width:0;background:var(--gold);transition:width .6s var(--ease)}
+.qstep{display:none;margin-top:24px;animation:fadeup .6s var(--ease)}
+.qstep.on{display:block}
+.qstep h3{font-size:1.7rem}
+.opts{display:grid;gap:10px;margin-top:20px}
+.opt{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border-radius:14px;border:1px solid var(--line);background:var(--linen);font-family:var(--sans);font-size:.98rem;color:var(--ink);cursor:pointer;text-align:left;transition:background .35s,border-color .35s,transform .35s var(--ease)}
+.opt:hover{background:var(--wall);transform:translateX(4px)}
+.opt::after{content:"\2192";color:var(--oak-deep)}
+.result .rtag{display:inline-block;padding:.4rem .8rem;border-radius:999px;background:var(--sage-soft);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--olive)}
+.result p{margin-top:.8rem;color:var(--mute)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.form input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--linen);font-family:var(--sans);font-size:.95rem;color:var(--ink)}
+.form .btn{grid-column:1/-1;justify-content:center}
+.form small{grid-column:1/-1;font-size:.76rem;color:var(--mute)}
+.thanks{display:none;margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--sage-soft);color:var(--olive-deep)}
+@media (max-width:860px){.quiz .wrap{grid-template-columns:1fr;gap:36px;padding-block:80px}.form{grid-template-columns:1fr}.qbox{padding:24px}}
+
+/* reels */
+.reels{background:var(--linen)}
+.reels .wrap{padding-block:120px}
+.rtrack{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:16px;margin-top:44px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.reel{scroll-snap-align:start;position:relative;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--olive-deep);color:var(--orchid);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;border:0;cursor:pointer;text-align:left;font-family:var(--sans)}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:transform 1.4s var(--ease),opacity .6s}
+.reel:hover img{transform:scale(1.07);opacity:.62}
+.reel::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,47,35,0) 40%,rgba(42,47,35,.9) 100%)}
+.reel .who{position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.04em;background:rgba(251,248,243,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px 10px 6px 6px;border-radius:999px}
+.reel .who i{width:22px;height:22px;border-radius:50%;background:var(--gold-soft);display:inline-block}
+.reel b{position:relative;font-family:var(--serif);font-weight:400;font-size:1.22rem;line-height:1.2}
+.reel small{position:relative;margin-top:.5rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.reel .playdot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px}
+
+/* fees + faq */
+.plain{background:var(--orchid)}
+.plain .wrap{padding-block:120px;display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.fees{border-radius:28px;padding:34px;background:var(--linen);border:1px dashed rgba(165,130,90,.55)}
+.fees h3{font-size:1.9rem}
+.fees ul{list-style:none;margin-top:1.4rem;display:grid;gap:0}
+.fees li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:.98rem}
+.fees li em{font-style:normal;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--oak-deep);background:rgba(196,155,69,.14);padding:.2rem .55rem;border-radius:6px;white-space:nowrap;align-self:center}
+.fees .mp{margin-top:1.3rem;font-size:.92rem;color:var(--mute)}
+.faq details{border-top:1px solid var(--line);padding:6px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;font-family:var(--serif);font-size:1.35rem;color:var(--olive-deep)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-size:1.5rem;color:var(--oak-deep);transition:transform .5s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 18px;color:var(--mute)}
+@media (max-width:860px){.plain .wrap{grid-template-columns:1fr;padding-block:80px;gap:44px}}
+
+/* visit */
+.visit{background:var(--olive-deep);color:var(--orchid)}
+.visit .wrap{padding-block:110px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.visit .ph{border-radius:26px;overflow:hidden;aspect-ratio:16/11}
+.visit .ph img{width:100%;height:100%;object-fit:cover}
+.visit h2{color:var(--orchid)}
+.visit h2 em{color:var(--gold-soft)}
+.addr{margin-top:1.6rem;display:grid;gap:16px}
+.addr div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding-top:14px;border-top:1px solid rgba(251,248,243,.14)}
+.addr dt{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);padding-top:.3rem}
+.addr dd{color:rgba(251,248,243,.88)}
+.addr a{text-decoration:none;border-bottom:1px solid rgba(251,248,243,.3)}
+.visit .btns .btn{border-color:rgba(251,248,243,.5);color:var(--orchid)}
+.visit .btns .btn.gold{color:var(--olive-deep);border-color:var(--blush)}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr;padding-block:80px;gap:36px}.addr div{grid-template-columns:1fr;gap:2px}}
+
+footer{background:var(--olive-deep);color:rgba(251,248,243,.6);border-top:1px solid rgba(251,248,243,.1);font-size:.8rem}
+footer .wrap{padding-block:34px 110px;display:grid;gap:10px}
+
+/* mobile bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;display:none;grid-template-columns:.8fr .8fr 1.4fr;gap:8px;padding:8px;border-radius:999px;background:rgba(42,47,35,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 50px -20px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .6s var(--ease)}
+.mbar.show{transform:none}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:.85rem;border-radius:999px;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--orchid)}
+.mbar a.book{background:var(--blush);color:var(--olive-deep)}
+@media (max-width:860px){.mbar{display:grid}}
+
+.concept{position:fixed;left:16px;bottom:16px;z-index:45;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;background:var(--orchid);color:var(--olive);border:1px solid var(--line);padding:7px 12px;border-radius:999px;box-shadow:0 10px 30px -15px rgba(0,0,0,.3)}
+@media (max-width:860px){.concept{display:none}}
+
+/* film modal */
+.modal{position:fixed;inset:0;z-index:70;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(42,47,35,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.on{display:flex}
+.modal .box{background:var(--orchid);color:var(--ink);border-radius:26px;max-width:540px;width:100%;padding:34px;animation:fadeup .5s var(--ease)}
+.modal .rec{display:flex;align-items:center;gap:10px;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oak-deep);font-weight:600}
+.modal .rec i{width:9px;height:9px;border-radius:50%;background:#D9644E;animation:blink 1.4s steps(2,start) infinite}
+.modal h3{font-size:1.8rem;margin-top:.6rem}
+.modal ul{margin-top:1rem;padding-left:1.1rem;display:grid;gap:6px;color:var(--mute)}
+.modal .close{margin-top:1.6rem}
+
+/* motion system */
+.rv{opacity:0;transform:translateY(30px);filter:blur(6px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none;filter:none}
+.rvimg{overflow:hidden}
+.rvimg img{clip-path:inset(0 0 100% 0);transform:scale(1.12);transition:clip-path 1.3s var(--wipe),transform 1.8s var(--ease)}
+.rvimg.in img{clip-path:inset(0 0 0 0);transform:scale(1)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}.rvimg img{clip-path:none;transform:none}.hl>span{transform:none}.fade{opacity:1}}
+:root{--c-ink:var(--olive-deep);--c-accent:var(--oak-deep)}
+/* ===== mobile menu + chat (added) ===== */
+.menubtn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;color:var(--c-ink);flex:none}
+.menubtn span{position:relative;display:block;width:18px;height:1.5px;background:currentColor;transition:background .3s}
+.menubtn span::before,.menubtn span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .45s var(--ease)}
+.menubtn span::before{top:-6px}.menubtn span::after{top:6px}
+body.menu-open .menubtn span{background:transparent}
+body.menu-open .menubtn span::before{transform:translateY(6px) rotate(45deg)}
+body.menu-open .menubtn span::after{transform:translateY(-6px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:39;background:var(--linen);padding:120px 28px 130px;display:flex;flex-direction:column;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s}
+body.menu-open{overflow:hidden}
+body.menu-open .mnav{opacity:1;visibility:visible;transform:none}
+body.menu-open .mbar{transform:translateY(140%)!important}
+.mnav a{font-family:var(--serif);font-size:1.7rem;line-height:1.2;text-decoration:none;color:var(--c-ink);padding:14px 0;border-bottom:1px solid var(--line)}
+.mnav a.other{font-size:1.05rem;font-family:var(--sans);color:var(--c-accent);border:0;padding-top:20px}
+.mnav .mfoot{margin-top:22px;display:grid;gap:12px}
+.mnav .mfoot a.tel{font-family:var(--sans);font-size:1rem;border:0;padding:0;color:var(--c-accent)}
+.mnav .mfoot a.btn{justify-content:center;font-family:var(--sans);font-size:.8rem;padding:1rem;border-bottom:0;background:var(--c-ink);color:var(--orchid)}
+@media (max-width:1200px){.menubtn{display:inline-flex}}
+.menubtn:focus:not(:focus-visible),.mbar button:focus:not(:focus-visible),.chatfab:focus:not(:focus-visible){outline:none}
+.menubtn:focus-visible,.chatfab:focus-visible,.chip-q:focus-visible,.chat-x:focus-visible{outline:2px solid var(--blush);outline-offset:3px}
+.chatfab{position:fixed;right:22px;bottom:22px;z-index:48;width:62px;height:62px;border-radius:50%;border:0;background:var(--c-ink);color:var(--orchid);display:grid;place-items:center;cursor:pointer;box-shadow:0 20px 40px -18px rgba(0,0,0,.5);transition:transform .4s var(--ease)}
+.chatfab:hover{transform:translateY(-3px)}
+.chatfab::after{content:"";position:absolute;top:5px;right:5px;width:13px;height:13px;border-radius:50%;background:var(--blush);border:2px solid var(--c-ink)}
+@media (max-width:860px){.chatfab{display:none}}
+.chat{position:fixed;right:22px;bottom:98px;z-index:65;width:min(380px,calc(100vw - 32px));height:min(570px,calc(100vh - 140px));background:var(--orchid);border:1px solid var(--line);border-radius:24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.45);display:flex;flex-direction:column;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(16px) scale(.98);transform-origin:bottom right;transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s}
+.chat.on{opacity:1;visibility:visible;transform:none}
+@media (max-width:860px){.chat{left:8px;right:8px;bottom:8px;width:auto;height:min(80vh,640px);border-radius:22px}}
+.chat-h{display:flex;align-items:center;gap:12px;padding:16px 18px;background:var(--c-ink);color:var(--orchid)}
+.chat-h .av{width:42px;height:42px;border-radius:50%;background:var(--blush);display:grid;place-items:center;font-family:var(--serif);font-size:.8rem;letter-spacing:.02em;white-space:nowrap;color:var(--c-ink);font-variation-settings:"SOFT" 100,"opsz" 144}
+.chat-h .av i{font-style:normal;color:#A5825A}
+.chat-h b{display:block;font-family:var(--serif);font-weight:400;font-size:1.1rem;line-height:1.2}
+.chat-h small{display:flex;align-items:center;gap:6px;font-size:.74rem;opacity:.82}
+.chat-h small i{width:7px;height:7px;border-radius:50%;background:#8FC7A0}
+.chat-x{margin-left:auto;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:inherit;font-size:1.3rem;line-height:1;cursor:pointer}
+.chat-b{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:10px;background:var(--linen)}
+.msg{max-width:86%;padding:11px 14px;border-radius:18px;font-size:.93rem;line-height:1.45;animation:chatin .35s var(--ease)}
+.msg.them{background:var(--orchid);border:1px solid var(--line);border-bottom-left-radius:6px;align-self:flex-start;color:var(--ink)}
+.msg.me{background:var(--c-ink);color:var(--orchid);border-bottom-right-radius:6px;align-self:flex-end}
+.msg a{color:inherit;font-weight:600;text-underline-offset:2px}
+@keyframes chatin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.typing{align-self:flex-start;display:flex;gap:4px;padding:13px 14px;background:var(--orchid);border:1px solid var(--line);border-radius:18px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--mute);animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;background:var(--linen);border-top:1px solid var(--line);max-height:132px;overflow-y:auto}
+.chip-q{border:1px solid var(--line);background:var(--orchid);color:var(--ink);border-radius:999px;padding:.5rem .8rem;font-family:var(--sans);font-size:.8rem;cursor:pointer;transition:background .3s}
+.chip-q:hover{background:var(--blush)}
+.chat-f{display:flex;gap:8px;padding:10px 12px;background:var(--orchid);border-top:1px solid var(--line)}
+.chat-f input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:.75rem 1rem;font-family:var(--sans);font-size:16px;background:var(--linen);color:var(--ink)}
+.chat-f button{border:0;border-radius:999px;background:var(--c-ink);color:var(--orchid);padding:0 1.1rem;font-family:var(--sans);font-weight:600;font-size:.85rem;cursor:pointer}
+.chat-note{font-size:.7rem;color:var(--mute);text-align:center;padding:0 12px 10px;background:var(--orchid)}
+.mbar button{display:flex;align-items:center;justify-content:center;gap:6px;padding:.85rem;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--orchid);font-family:var(--sans);font-weight:600;font-size:.82rem;cursor:pointer}
+</style>
+</head>
+<body>
+<script>
+(function(){ if('scrollRestoration' in history) history.scrollRestoration='manual'; if(!location.hash) window.scrollTo(0,0); })();
+</script>
+
+<div class="note">New to SKEEN? Most people start with a skin check. <a href="#journey">See what happens, start to finish</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="SKEEN Clinic home">
+      <span class="wm" aria-hidden="true">SKE<i>E</i>N</span>
+      <span class="loc">Spring Hill<br>Brisbane</span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#doctors">Our doctors</a>
+      <a href="#journey">Your visit</a>
+      <a href="#learn">Skin cancer, explained</a><a href="#conditions">Skin conditions</a>
+      <a href="#tech">How we look</a>
+      <a href="#sides">Skin and cosmetic care</a>
+      <a href="#visit">Find us</a>
+    </nav>
+    <div class="navcta">
+      <a class="tel" href="tel:+61731885474">(07) 3188 5474</a>
+      <a class="btn solid" href="https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors" target="_blank" rel="noopener">Book <span class="arr">&rarr;</span></a>
+      <button class="menubtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Menu">
+  <a href="#doctors">Our doctors</a>
+  <a href="#journey">Your visit</a>
+  <a href="#learn">Skin cancer, explained</a><a href="#conditions">Skin conditions</a>
+  <a href="#tech">How we look</a>
+  <a href="#sides">Skin and cosmetic care</a>
+  <a href="#visit">Find us</a>
+  <a class="other" href="aesthetics.html">Skin and cosmetic medicine &rarr;</a>
+  <div class="mfoot"><a class="tel" href="tel:+61731885474">Call (07) 3188 5474</a><a class="btn" href="https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors" target="_blank" rel="noopener">Book a skin check <span class="arr">&rarr;</span></a></div>
+</nav>
+
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-label="Welcome to SKEEN">
+  <div class="film"><img src="assets/web/room-door.jpg" alt="The SKEEN Clinic entrance and waiting room in Spring Hill, with an olive couch, oak table and orchids"></div>
+  <div class="veil"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow fade d1">Skin checks &middot; Skin cancer care &middot; Skin medicine</span>
+      <h1 style="margin-top:1.1rem">
+        <span class="hl"><span>Being looked after</span></span>
+        <span class="hl"><span>starts <em>at the door.</em></span></span>
+      </h1>
+      <p class="lead fade d2">Two doctors, one calm clinic in Spring Hill. Skin checks, skin cancer care, and skin and cosmetic medicine, with every step explained in plain words.</p>
+      <div class="btns fade d3">
+        <a class="btn gold" href="https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors" target="_blank" rel="noopener">Book your skin check <span class="arr">&rarr;</span></a>
+        <a class="btn" href="#doctors">Meet Dr Colin and Dr Ali</a>
+      </div>
+      <div class="stamp fade d4"><b data-count="5.0" data-dec="1">0.0</b><span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><br>On Google, from <span data-count="69">0</span> reviews</span></div>
+    </div>
+    <aside class="shot fade d4" aria-label="Hero film placeholder">
+      <div class="rec"><i></i> Hero film, to shoot</div>
+      <h3>Welcome in</h3>
+      <p>Dr Colin and Dr Ali greet a patient at the door, walk her past the orchids, and share a laugh on the way to the room. Twenty seconds, no voiceover.</p>
+      <button class="play" type="button" data-film="hero"><span class="playdot"></span> See the shot list</button>
+    </aside>
+  </div>
+  <div class="cue" aria-hidden="true"></div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>Skin checks <i>&#10022;</i></span><span>3D total body imaging <i>&#10022;</i></span><span>Skin cancer care <i>&#10022;</i></span><span>Sunspots and sun damage <i>&#10022;</i></span><span>Redness, acne and eczema <i>&#10022;</i></span><span>Pigment and melasma <i>&#10022;</i></span><span>Scar care <i>&#10022;</i></span><span>Spring Hill, Brisbane <i>&#10022;</i></span>
+  <span>Skin checks <i>&#10022;</i></span><span>3D total body imaging <i>&#10022;</i></span><span>Skin cancer care <i>&#10022;</i></span><span>Sunspots and sun damage <i>&#10022;</i></span><span>Redness, acne and eczema <i>&#10022;</i></span><span>Pigment and melasma <i>&#10022;</i></span><span>Scar care <i>&#10022;</i></span><span>Spring Hill, Brisbane <i>&#10022;</i></span>
+</div></div>
+
+<!-- FOR HER -->
+<section class="her" aria-labelledby="her-h">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="pic rv">
+      <div class="frame rvimg"><img src="assets/web/room-sofa.jpg" alt="The SKEEN waiting room with a green couch, soft chairs and white orchids"></div>
+      <div class="tag"><b>Booking for family too?</b>You can book a skin check for your partner or parents at the same time as yours.</div>
+    </div>
+    <div class="copy">
+      <span class="eyebrow rv">You look after everyone</span>
+      <h2 id="her-h" class="rv" style="--d:.08s;margin-top:1rem">Put yourself on the list <em>this time.</em></h2>
+      <p class="lead rv" style="--d:.16s">You remember everyone else's appointments. Your own skin check is the one that keeps getting moved. Let this be the easy one.</p>
+      <ul class="checks rv" style="--d:.24s">
+        <li>Your doctor talks with you first, then checks your skin head to toe with state-of-the-art equipment.</li>
+        <li>Everything we see is explained in plain words, before you leave.</li>
+        <li>Dr Ali can see you with or without a GP referral.</li>
+        <li>Park in the building and come straight up to Level 1.</li>
+      </ul>
+      <p class="aside rv" style="--d:.3s">Looking after someone else's skin too? Book their check at the same time.</p>
+      <div class="btns rv" style="--d:.36s">
+        <a class="btn solid" href="https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors" target="_blank" rel="noopener">Book your check <span class="arr">&rarr;</span></a>
+        <a class="btn" href="#checkin">Not sure what you need?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="docs" id="doctors" aria-labelledby="docs-h">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Your doctors</span>
+        <h2 id="docs-h" class="rv" style="--d:.08s;margin-top:1rem">Meet the doctors <em>who will look after your skin.</em></h2>
+      </div>
+      <p class="statement rv" style="--d:.16s">The people who check your skin are the people who explain it, treat it and see you next time.</p>
+    </div>
+
+    <div class="pair">
+      <article class="doc rv">
+        <div class="portrait"><span class="nm" aria-hidden="true">Colin</span><div class="frame"><img src="assets/web/colin.png" alt="Dr Colin McTari, founder and medical director of SKEEN Clinic"></div></div>
+        <div class="body">
+          <span class="role">Founder and Medical Director</span>
+          <h3>Dr Colin McTari</h3>
+          <p class="full">MD</p>
+          <ul class="facts">
+            <li>More than 17 years of clinical and surgical experience in skin</li>
+            <li>Trained across major Brisbane hospitals before private practice</li>
+            <li>Special interest in complex skin cancer surgery and repair, laser and aesthetic medicine</li>
+          </ul>
+          <p class="creds">Fellowship in Dermatology, Australian Institute of Dermatology &middot; Fellow, Australian Skin Cancer Institute &middot; Fellow, IFAAS &middot; Board Member, Austro-Asian College of Cosmetic Medicine</p>
+        </div>
+      </article>
+
+      <article class="doc rv" style="--d:.12s">
+        <div class="portrait"><span class="nm" aria-hidden="true">Ali</span><div class="frame"><img src="assets/web/ali.png" alt="Dr Ali (Dr Alireza Afrasiabi), skin cancer doctor at SKEEN Clinic"></div></div>
+        <div class="body">
+          <span class="role">Skin cancer doctor and GP</span>
+          <h3>Dr Ali</h3>
+          <p class="full">Dr Alireza Afrasiabi MD</p>
+          <ul class="facts">
+            <li>More than 14 years in skin cancer medicine</li>
+            <li>See him with or without a referral</li>
+            <li>Special interest in skin checks, flap and graft repairs on the face, nose and ears, and laser for redness and pigment</li>
+            <li>Supervises GP registrars and edits for the Skin Cancer College</li>
+          </ul>
+          <p class="creds">Fellow, Skin Cancer College Australasia (FSCCA) &middot; Fellow, Royal Australian College of General Practitioners (FRACGP) &middot; Advanced Certificate in General Dermatology, Bond University</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="series">
+      <div class="top">
+        <div>
+          <span class="eyebrow rv">The film series</span>
+          <h2 class="rv" style="--d:.08s;margin-top:1rem;font-size:clamp(1.8rem,3.6vw,2.7rem)">Get to know them <em>before you walk in.</em></h2>
+        </div>
+      </div>
+      <div class="eps">
+        <button class="ep rv" type="button" data-film="ep1"><img src="assets/web/room-art.jpg" alt=""><span class="playdot" aria-hidden="true"></span><span class="n">01</span><span class="t"><b>Who we are</b><small>Dr Colin and Dr Ali &middot; to film</small></span></button>
+        <button class="ep rv" type="button" style="--d:.08s" data-film="ep2"><img src="assets/web/room-sofa.jpg" alt=""><span class="playdot" aria-hidden="true"></span><span class="n">02</span><span class="t"><b>Why we love this work</b><small>In their own words &middot; to film</small></span></button>
+        <button class="ep rv" type="button" style="--d:.16s" data-film="ep3"><img src="assets/web/corridor.jpg" alt=""><span class="playdot" aria-hidden="true"></span><span class="n">03</span><span class="t"><b>What seeing us is like</b><small>A visit, start to finish &middot; to film</small></span></button>
+        <button class="ep rv" type="button" style="--d:.24s" data-film="ep4"><img src="assets/web/room-door.jpg" alt=""><span class="playdot" aria-hidden="true"></span><span class="n">04</span><span class="t"><b>The machines, explained</b><small>What each one does for you &middot; to film</small></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey" id="journey" aria-labelledby="j-h">
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:var(--gold-soft)">Your visit</span>
+    <h2 id="j-h" class="rv" style="--d:.08s;margin-top:1rem">What happens, <em>start to finish.</em></h2>
+    <p class="lead rv" style="--d:.16s">No surprises. This is the whole visit, step by step.</p>
+    <div class="jgrid">
+      <div class="jpic" aria-hidden="true">
+        <span class="bar"></span>
+        <img class="on" src="assets/web/room-door.jpg" alt="" data-step="1">
+        <img src="assets/web/room-sofa.jpg" alt="" data-step="2">
+        <img class="contain" src="assets/web/ali.jpg" alt="" data-step="3">
+        <img src="assets/web/corridor.jpg" alt="" data-step="4">
+        <img class="contain" src="assets/web/vectra.jpg" alt="" data-step="5">
+        <img class="contain" src="assets/web/colin.jpg" alt="" data-step="6">
+        <img src="assets/web/room-art.jpg" alt="" data-step="7">
+        <span class="count">01</span>
+      </div>
+      <ol class="steps">
+        <li class="step on" data-step="1"><span class="k">1</span><div><h3>Book</h3><p>Book online, or call (07) 3188 5474 and a real person will help. Dr Ali can see you with or without a referral.</p><span class="chip">Booking for someone else too? Book both at once.</span></div></li>
+        <li class="step" data-step="2"><span class="k">2</span><div><h3>Arrive and settle in</h3><p>Park at Wilson Parking in the same building, come up to Level 1 of the Blue Building, and take the green couch. The orchids are real.</p></div></li>
+        <li class="step" data-step="3"><span class="k">3</span><div><h3>Talk first</h3><p>Your doctor asks about your skin, your history and anything that has been on your mind. Bring any past results or treatment records you have.</p></div></li>
+        <li class="step" data-step="4"><span class="k">4</span><div><h3>Your skin check</h3><p>A careful head-to-toe look, using a dermatoscope, a magnifying light that shows what is under the surface of a spot.</p></div></li>
+        <li class="step" data-step="5"><span class="k">5</span><div><h3>The 3D image, if it suits you</h3><p>The VECTRA WB360 captures your skin in about three seconds. You stand still. It does the rest. Next visit, your doctor compares every spot with last time.</p><span class="chip">Three seconds. We timed the standing still.</span></div></li>
+        <li class="step" data-step="6"><span class="k">6</span><div><h3>Your results, in plain words</h3><p>Your doctor explains what they saw and what it means. If a spot needs attention, you hear your options before you leave, and many treatments can be done here at SKEEN.</p></div></li>
+        <li class="step" data-step="7"><span class="k">7</span><div><h3>See you next time</h3><p>We remind you when your next check is due, so it never slips down the list again.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="learn" id="learn" aria-labelledby="l-h">
+  <div class="wrap">
+    <span class="eyebrow rv">Skin cancer, explained calmly</span>
+    <h2 id="l-h" class="rv" style="--d:.08s;margin-top:1rem;max-width:18ch">Knowing what we look for <em>takes the fear out of it.</em></h2>
+    <p class="lead rv" style="--d:.16s">Here is what our doctors are checking for, in plain words, and how each one is usually looked after.</p>
+    <div class="lgrid">
+      <article class="card rv">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D4432" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
+        <h3>Sunspots</h3><div class="aka">Solar keratoses</div>
+        <p>Rough, scaly patches on skin that has seen a lot of sun. They are not skin cancer, but they show sun damage and some can change over time.</p>
+        <p class="how"><b>How they are looked after</b>Often freezing, a prescription cream, or a cream-and-light treatment called photodynamic therapy.</p>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D4432" stroke-width="1.6"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2.2"/></svg></div>
+        <h3>Basal cell carcinoma</h3><div class="aka">BCC</div>
+        <p>The most common skin cancer in Australia. It often looks like a pearly or pink bump, or a sore that will not heal, and it usually grows slowly.</p>
+        <p class="how"><b>How it is looked after</b>Most often by removing it. Some shallow ones can be treated with creams, light therapy or laser.</p>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D4432" stroke-width="1.6"><path d="M5 17c2-6 5-10 7-10s5 4 7 10"/><path d="M8 17h8"/></svg></div>
+        <h3>Squamous cell carcinoma</h3><div class="aka">SCC</div>
+        <p>Often a thickened, scaly or tender spot on sun-exposed skin that grows over weeks or months.</p>
+        <p class="how"><b>How it is looked after</b>Usually by removing it. Finding it early keeps treatment simpler.</p>
+      </article>
+      <article class="card rv" style="--d:.24s">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D4432" stroke-width="1.6"><path d="M12 4c4 0 7 3.5 7 8s-3 8-7 8-7-3-7-8"/><path d="M5 12c0-3 1.5-5.5 4-7"/></svg></div>
+        <h3>Melanoma</h3><div class="aka">New or changing spots</div>
+        <p>Can show up as a new spot, or a mole that changes in size, shape or colour. Regular checks and comparing images over time help doctors notice change early.</p>
+        <p class="how"><b>How it is looked after</b>Treatment usually starts with removing the spot, and your doctor explains every next step.</p>
+      </article>
+    </div>
+    <p class="fine rv">General information only. Your doctor will explain what applies to you.</p>
+    <button class="watch rv" type="button" data-film="learn"><span class="playdot" aria-hidden="true"></span><span><b>Watch Dr Ali explain what he looks for</b><small>Short film &middot; to shoot</small></span></button>
+  </div>
+</section>
+
+<!-- MACHINES -->
+<section class="learn" id="conditions" aria-labelledby="c-h">
+  <div class="wrap">
+    <span class="eyebrow rv">Skin conditions, looked after here</span>
+    <h2 id="c-h" class="rv" style="--d:.08s;margin-top:1rem;max-width:20ch">Skin health is <em>more than skin checks.</em></h2>
+    <p class="lead rv" style="--d:.16s">The everyday conditions that make life uncomfortable are looked after by the same two doctors, in the same calm room.</p>
+    <div class="lgrid">
+      <article class="card rv">
+        <h3>Acne</h3><div class="aka">At any age</div>
+        <p>Breakouts that keep coming back, on the face, chest or back, long after you were told you would grow out of them.</p>
+        <p class="how"><b>How it is looked after</b>Prescription creams or tablets, and in-clinic treatments where they suit your skin. Your doctor explains how long it usually takes to settle.</p>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <h3>Eczema and dermatitis</h3><div class="aka">Itch, dryness, flares</div>
+        <p>Skin that is itchy, dry or inflamed, flaring for reasons that are hard to pin down.</p>
+        <p class="how"><b>How it is looked after</b>Finding what sets it off, including patch testing when that helps, then a plan for flares and for keeping skin calm in between.</p>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <h3>Psoriasis</h3><div class="aka">Thickened, scaly patches</div>
+        <p>Patches that build up on elbows, knees, the scalp or elsewhere, and come and go over the years.</p>
+        <p class="how"><b>How it is looked after</b>Creams, light therapy or tablets, chosen with you depending on how much skin is involved.</p>
+      </article>
+      <article class="card rv" style="--d:.24s">
+        <h3>Rosacea</h3><div class="aka">Redness and flushing</div>
+        <p>Flushing, redness or visible vessels across the cheeks and nose, often worse with heat, wine or stress.</p>
+        <p class="how"><b>How it is looked after</b>Your triggers explained, prescription treatment, and laser where it suits your skin.</p>
+      </article>
+      <article class="card rv">
+        <div class="ic" aria-hidden="true" style="background:var(--sage-soft)"></div>
+        <h3>Vitiligo</h3><div class="aka">Loss of colour</div>
+        <p>Patches where the skin loses its colour, which can spread slowly and matter a great deal to how you feel.</p>
+        <p class="how"><b>How it is looked after</b>Your doctor explains what is happening and the options, and sun protection is part of the conversation.</p>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <div class="ic" aria-hidden="true" style="background:var(--blush)"></div>
+        <h3>Heavy sweating</h3><div class="aka">Hyperhidrosis</div>
+        <p>Underarm sweating that decides what you wear and how you plan your day.</p>
+        <p class="how"><b>How it is looked after</b>Talked through at a consultation, including miraDry, which we have here in the clinic.</p>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <div class="ic" aria-hidden="true" style="background:var(--gold-soft)"></div>
+        <h3>Scars and birthmarks</h3><div class="aka">Raised, red or simply there</div>
+        <p>A scar that stayed raised or red, or a birthmark you would like a doctor to look at properly.</p>
+        <p class="how"><b>How it is looked after</b>Looked at in person first. Some are watched over time, some are treated with laser or a small procedure.</p>
+      </article>
+      <article class="card rv" style="--d:.24s">
+        <div class="ic" aria-hidden="true" style="background:var(--wall)"></div>
+        <h3>Children's skin</h3><div class="aka">Little ones too</div>
+        <p>Rashes, eczema and birthmarks in children, when you would rather have someone look than keep wondering.</p>
+        <p class="how"><b>How it is looked after</b>An unhurried appointment, explained to you and to them, in words they can follow.</p>
+      </article>
+    </div>
+    <p class="fine rv">General information only. Your doctor will explain what applies to you.</p>
+  </div>
+</section>
+
+<section class="learn" id="questions" aria-labelledby="q-h" style="background:var(--linen)">
+  <div class="wrap">
+    <span class="eyebrow rv">Questions people ask us</span>
+    <h2 id="q-h" class="rv" style="--d:.08s;margin-top:1rem;max-width:20ch">The things you were going to <em>look up at 11pm.</em></h2>
+    <p class="lead rv" style="--d:.16s">Short, honest answers, so you can stop wondering and get it looked at.</p>
+    <div class="lgrid">
+      <article class="card rv">
+        <h3>When should I worry about a spot?</h3>
+        <p>If it is new, changing in size, shape or colour, itching or bleeding, have it looked at. Most turn out to be nothing, and the ones that matter are simpler to treat when they are found early.</p>
+      </article>
+      <article class="card rv" style="--d:.08s">
+        <h3>What does melanoma look like?</h3>
+        <p>There is no single look, which is exactly why checks matter. It can be a new spot, or a mole that changes. Your doctor looks at the pattern under a dermatoscope and compares images over time.</p>
+      </article>
+      <article class="card rv" style="--d:.16s">
+        <h3>How often should I have a skin check?</h3>
+        <p>Most adults have one each year. Your doctor may suggest a different rhythm based on your skin, your family history and how much sun you have had.</p>
+      </article>
+      <article class="card rv" style="--d:.24s">
+        <h3>Do I need a referral?</h3>
+        <p>Dr Ali can see you with or without a referral from your GP. If you would like to see Dr Colin, call us on (07) 3188 5474 and we will talk you through it.</p>
+      </article>
+    </div>
+    <p class="fine rv">General information only. Your doctor will explain what applies to you.</p>
+  </div>
+</section>
+
+<section class="tech" id="tech" aria-labelledby="t-h">
+  <div class="wrap">
+    <span class="eyebrow rv">How we look closer</span>
+    <h2 id="t-h" class="rv" style="--d:.08s;margin-top:1rem;max-width:22ch">What each machine does, <em>and why it matters to you.</em></h2>
+    <p class="lead rv" style="--d:.16s">Explained in plain words by Dr Colin and Dr Ali, the doctors who use them every day.</p>
+    <div class="tabs" role="tablist" aria-label="Our equipment">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="m1" id="tb1">3D total body imaging</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="m2" id="tb2">Facial skin analysis</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="m3" id="tb3">Laser</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="m4" id="tb4">Radiofrequency</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="m5" id="tb5">Underarm sweating</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="m6" id="tb6">Light therapy</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="m1" aria-labelledby="tb1">
+      <div class="mimg"><img src="assets/web/vectra.jpg" alt="VECTRA WB360 3D total body imaging system"></div>
+      <div><h3>3D total body imaging</h3><div class="brandname">VECTRA WB360</div>
+        <dl class="rows">
+          <div><dt>What it does</dt><dd>Captures an image of your skin, head to toe, in about three seconds, and builds a 3D map of every spot.</dd></div>
+          <div><dt>Why it matters</dt><dd>Next visit, your doctor can compare each spot with last time, instead of relying on memory.</dd></div>
+          <div><dt>How we use it</dt><dd class="film">Film: Dr Colin walks a patient through her first scan.</dd></div>
+        </dl></div>
+    </div>
+    <div class="panel" role="tabpanel" id="m2" aria-labelledby="tb2" hidden>
+      <div class="mimg"><img src="assets/web/visia.jpg" alt="VISIA facial skin analysis system"></div>
+      <div><h3>Facial skin analysis</h3><div class="brandname">VISIA</div>
+        <dl class="rows">
+          <div><dt>What it does</dt><dd>Photographs your face under different lighting to show sun damage, pigment and redness that are hard to see in a mirror.</dd></div>
+          <div><dt>Why it matters</dt><dd>You and your doctor see the same picture, so the plan makes sense to you.</dd></div>
+          <div><dt>How we use it</dt><dd class="film">Film: Dr Ali talks through a scan on screen.</dd></div>
+        </dl></div>
+    </div>
+    <div class="panel" role="tabpanel" id="m3" aria-labelledby="tb3" hidden>
+      <div class="mimg"><img src="assets/web/ultraclear.jpg" alt="UltraClear laser"></div>
+      <div><h3>Laser</h3><div class="brandname">UltraClear</div>
+        <dl class="rows">
+          <div><dt>What it is for</dt><dd>Concerns like sun damage, uneven tone, texture, fine lines and scarring.</dd></div>
+          <div><dt>Why it matters</dt><dd>Your doctor assesses your skin first, then tells you honestly whether laser suits you.</dd></div>
+          <div><dt>How we use it</dt><dd class="film">Film: what a laser appointment feels like, and what the days after look like.</dd></div>
+        </dl></div>
+    </div>
+    <div class="panel" role="tabpanel" id="m4" aria-labelledby="tb4" hidden>
+      <div class="mimg"><img src="assets/web/inmode.jpg" alt="InMode radiofrequency platform"></div>
+      <div><h3>Radiofrequency</h3><div class="brandname">InMode</div>
+        <dl class="rows">
+          <div><dt>What it is for</dt><dd>Skin that has lost firmness around the eyes, jawline and neck.</dd></div>
+          <div><dt>Why it matters</dt><dd>You talk through what is realistic for your skin before anything is booked.</dd></div>
+          <div><dt>How we use it</dt><dd class="film">Film: Dr Colin explains how radiofrequency works, in one minute.</dd></div>
+        </dl></div>
+    </div>
+    <div class="panel" role="tabpanel" id="m5" aria-labelledby="tb5" hidden>
+      <div class="mimg"><img src="assets/web/miradry.jpg" alt="miraDry system"></div>
+      <div><h3>Underarm sweating</h3><div class="brandname">miraDry</div>
+        <dl class="rows">
+          <div><dt>What it is for</dt><dd>Heavy underarm sweating that gets in the way of everyday life.</dd></div>
+          <div><dt>Why it matters</dt><dd>It is a medical condition, and there are options. Your doctor checks whether this one suits you.</dd></div>
+          <div><dt>How we use it</dt><dd class="film">Film: the question everyone is too embarrassed to ask, answered.</dd></div>
+        </dl></div>
+    </div>
+    <div class="panel" role="tabpanel" id="m6" aria-labelledby="tb6" hidden>
+      <div class="mimg text"><span>Light</span></div>
+      <div><h3>Photodynamic therapy</h3><div class="brandname">Cream and light treatment</div>
+        <dl class="rows">
+          <div><dt>What it is for</dt><dd>Sun damage and some shallow skin cancers, treated with a cream and a special light.</dd></div>
+          <div><dt>Why it matters</dt><dd>For the right spots, it can be an option instead of surgery. Your doctor explains whether it suits you.</dd></div>
+          <div><dt>How we use it</dt><dd class="film">Film: Dr Ali on who light therapy is for.</dd></div>
+        </dl></div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO SIDES -->
+<section class="sides" id="sides" aria-labelledby="s-h">
+  <div class="wrap">
+    <span class="eyebrow rv">One clinic, two kinds of care</span>
+    <h2 id="s-h" class="rv" style="--d:.08s;margin-top:1rem">Your skin's health, <em>and how you feel in it.</em></h2>
+    <div class="sgrid">
+      <div class="side health rv">
+        <span class="big" aria-hidden="true">health</span>
+        <span class="eyebrow">Skin health</span>
+        <h3 style="margin-top:.8rem">Checked, explained, looked after</h3>
+        <p>For the spots, the rashes and the questions you have been meaning to ask.</p>
+        <ul class="concerns">
+          <li><a href="#checkin">A spot I am not sure about <span>&rarr;</span></a></li>
+          <li><a href="#journey">My yearly skin check <span>&rarr;</span></a></li>
+          <li><a href="#learn">Sunspots and sun damage <span>&rarr;</span></a></li>
+          <li><a href="#checkin">Redness, acne, eczema or psoriasis <span>&rarr;</span></a></li>
+          <li><a href="#checkin">My child's skin <span>&rarr;</span></a></li>
+        </ul>
+      </div>
+      <div class="side conf rv" style="--d:.12s">
+        <span class="big" aria-hidden="true">glow</span>
+        <span class="eyebrow">Skin and cosmetic medicine</span>
+        <h3 style="margin-top:.8rem">Feeling at home in your skin</h3>
+        <p>Doctor-led care for the things you notice every time you look in the mirror.</p>
+        <ul class="concerns">
+          <li><a href="#checkin">Pigment and melasma <span>&rarr;</span></a></li>
+          <li><a href="#checkin">Texture, scarring and fine lines <span>&rarr;</span></a></li>
+          <li><a href="#tech">Firmness around the jaw and neck <span>&rarr;</span></a></li>
+          <li><a href="#checkin">Moles or skin tags I would like gone <span>&rarr;</span></a></li>
+          <li><a href="#tech">Heavy underarm sweating <span>&rarr;</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bridge rv">
+      <span class="sym" aria-hidden="true">&amp;</span>
+      <div><h3>Where the two meet</h3><p>After skin cancer surgery, the same doctors can help with how the scar looks too. One clinic, from the check to the healing.</p></div>
+      <a class="btn gold" href="#checkin">Ask about scar care <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CHECK-IN -->
+<section class="quiz" id="checkin" aria-labelledby="q-h">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative">
+    <div>
+      <span class="eyebrow rv" style="color:var(--gold-soft)">Not sure where to start?</span>
+      <h2 id="q-h" class="rv" style="--d:.08s;margin-top:1rem">A 30-second <em>skin check-in.</em></h2>
+      <p class="lead rv" style="--d:.16s">Two quick questions, and we will point you to the right first appointment. No wrong answers, and no pressure.</p>
+    </div>
+    <div class="qbox rv" style="--d:.12s" aria-live="polite">
+      <div class="qprog"><i id="qbar"></i></div>
+      <div class="qstep on" data-q="1">
+        <h3>What brings you in?</h3>
+        <div class="opts">
+          <button class="opt" type="button" data-a="spot">A spot, or a skin check</button>
+          <button class="opt" type="button" data-a="face">Something on my face I would like help with</button>
+          <button class="opt" type="button" data-a="cond">A skin condition, like redness, acne or eczema</button>
+          <button class="opt" type="button" data-a="him">I am booking for someone I love</button>
+        </div>
+      </div>
+      <div class="qstep" data-q="2">
+        <h3>When was your last full skin check?</h3>
+        <div class="opts">
+          <button class="opt" type="button" data-b="never">I have never had one</button>
+          <button class="opt" type="button" data-b="over">More than a year ago</button>
+          <button class="opt" type="button" data-b="recent">In the last year</button>
+        </div>
+      </div>
+      <div class="qstep result" data-q="3">
+        <span class="rtag" id="rtag">Your first step</span>
+        <h3 id="rhead" style="margin-top:.8rem">A full skin check</h3>
+        <p id="rbody">A calm, head-to-toe check with time to talk, and 3D imaging if it suits you.</p>
+        <form class="form" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('thanks').style.display='block';">
+          <label class="sr" style="position:absolute;left:-9999px" for="qn">First name</label>
+          <input id="qn" type="text" placeholder="First name" autocomplete="given-name">
+          <label class="sr" style="position:absolute;left:-9999px" for="qp">Mobile</label>
+          <input id="qp" type="tel" placeholder="Mobile" autocomplete="tel">
+          <button class="btn solid" type="submit">Text me a time <span class="arr">&rarr;</span></button>
+          <small>Concept only. Nothing is sent from this mockup.</small>
+        </form>
+        <div class="thanks" id="thanks">Thank you. In the live site, SKEEN texts you within a few minutes with times that suit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="reels" aria-labelledby="r-h">
+  <div class="wrap">
+    <span class="eyebrow rv">On Instagram</span>
+    <h2 id="r-h" class="rv" style="--d:.08s;margin-top:1rem">Get to know Dr Colin and Dr Ali <em>on Instagram.</em></h2>
+    <p class="lead rv" style="--d:.16s">Short, honest videos answering the questions people ask us every week, so you know who you are seeing before you arrive.</p>
+    <div class="rtrack">
+      <button class="reel rv" type="button" data-film="r1"><img src="assets/web/room-door.jpg" alt=""><span class="who"><i></i>Dr Ali</span><span class="playdot" aria-hidden="true"></span><b>What happens in a skin check, start to finish</b><small>To film</small></button>
+      <button class="reel rv" type="button" style="--d:.06s" data-film="r2"><img src="assets/web/corridor.jpg" alt=""><span class="who"><i></i>Dr Colin</span><span class="playdot" aria-hidden="true"></span><b>The 3D scan, explained in 30 seconds</b><small>To film</small></button>
+      <button class="reel rv" type="button" style="--d:.12s" data-film="r3"><img src="assets/web/room-art.jpg" alt=""><span class="who"><i></i>Dr Ali</span><span class="playdot" aria-hidden="true"></span><b>Sunspot or something else?</b><small>To film</small></button>
+      <button class="reel rv" type="button" style="--d:.18s" data-film="r4"><img src="assets/web/room-sofa.jpg" alt=""><span class="who"><i></i>Both</span><span class="playdot" aria-hidden="true"></span><b>How to book a skin check for someone you love</b><small>To film</small></button>
+      <button class="reel rv" type="button" style="--d:.24s" data-film="r5"><img src="assets/web/room-door.jpg" alt=""><span class="who"><i></i>Dr Colin</span><span class="playdot" aria-hidden="true"></span><b>A morning at SKEEN, behind the door</b><small>To film</small></button>
+      <button class="reel rv" type="button" style="--d:.3s" data-film="r6"><img src="assets/web/room-art.jpg" alt=""><span class="who"><i></i>Both</span><span class="playdot" aria-hidden="true"></span><b>Your questions, answered on the green couch</b><small>To film</small></button>
+    </div>
+  </div>
+</section>
+
+<!-- FEES + FAQ -->
+<section class="plain" aria-labelledby="f-h">
+  <div class="wrap">
+    <div class="fees rv">
+      <span class="eyebrow">Fees, in plain words</span>
+      <h3 id="f-h" style="margin-top:.8rem">No guessing about cost.</h3>
+      <ul>
+        <li>Skin check consultation <em>SKEEN to confirm</em></li>
+        <li>Medicare rebate <em>SKEEN to confirm</em></li>
+        <li>3D total body imaging <em>SKEEN to confirm</em></li>
+        <li>Skin and cosmetic consultations <em>SKEEN to confirm</em></li>
+      </ul>
+      <p class="mp">MediPay is available, so you can spread the cost of treatment.</p>
+    </div>
+    <div class="faq">
+      <span class="eyebrow rv">Good questions</span>
+      <h2 class="rv" style="--d:.08s;margin:1rem 0 1.6rem;font-size:clamp(1.9rem,4vw,3rem)">Asked every week.</h2>
+      <details class="rv"><summary>Do I need a referral?</summary><p>Dr Ali can see you with or without a GP referral. Call us and we can talk through booking with Dr Colin.</p></details>
+      <details class="rv"><summary>Where do I park?</summary><p>Wilson Parking is in the same building. Come up to Level 1 of the Blue Building at 55 Little Edward Street.</p></details>
+      <details class="rv"><summary>What should I bring?</summary><p>Any relevant medical history, and records from past skin checks or treatments if you have them.</p></details>
+      <details class="rv"><summary>Can I book for my partner as well?</summary><p>Yes. Book two appointments online, or call and we will help you line them up.</p></details>
+      <details class="rv"><summary>What happens if you find something?</summary><p>Your doctor explains what it is likely to be, what happens next and what your options are, in plain words, before you leave. Many treatments can be done here at SKEEN.</p></details>
+      <details class="rv"><summary>Do you see children?</summary><p>Yes. SKEEN looks after skin for infants, children and teens.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit" aria-labelledby="v-h">
+  <div class="wrap">
+    <div class="ph rvimg"><img src="assets/web/room-art.jpg" alt="The SKEEN waiting room with artwork, orchids and a soft chair"></div>
+    <div>
+      <span class="eyebrow rv" style="color:var(--gold-soft)">Find us</span>
+      <h2 id="v-h" class="rv" style="--d:.08s;margin-top:1rem">Level 1, <em>Spring Hill.</em></h2>
+      <dl class="addr rv" style="--d:.16s">
+        <div><dt>Address</dt><dd>6E1, Level 1, Blue Building<br>55 Little Edward Street, Spring Hill QLD 4000</dd></div>
+        <div><dt>Call</dt><dd><a href="tel:+61731885474">(07) 3188 5474</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@skeenclinic.com.au">info@skeenclinic.com.au</a></dd></div>
+        <div><dt>Hours</dt><dd>Monday to Friday, 9am to 5pm<br>Saturday, 9am to 1pm</dd></div>
+        <div><dt>Parking</dt><dd>Wilson Parking, in the same building</dd></div>
+      </dl>
+      <div class="btns rv" style="--d:.24s">
+        <a class="btn gold" href="https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors" target="_blank" rel="noopener">Book online <span class="arr">&rarr;</span></a>
+        <a class="btn" href="https://maps.google.com/?q=55+Little+Edward+Street+Spring+Hill+QLD+4000" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 SKEEN Clinic &middot; 55 Little Edward Street, Spring Hill QLD 4000 &middot; (07) 3188 5474</span>
+    <span>General information only, not medical advice. If your condition is an emergency, call 000 or go to your nearest emergency department.</span>
+    <span>Website concept by Clinic Catalyst. Clinic and doctor photos from skeenclinic.com.au. Film tiles show footage still to be shot. Appointment reminders, the skin check-in and the fees panel are proposed features. Hours as listed on skeenclinic.com.au.</span>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a href="tel:+61731885474">Call</a><button type="button" data-chat>Chat</button>
+  <a class="book" href="https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors" target="_blank" rel="noopener">Book a skin check</a>
+</div>
+<span class="concept">Concept by Clinic Catalyst</span>
+
+<button class="chatfab" type="button" data-chat aria-label="Open chat"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-4.6A8.4 8.4 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></svg></button>
+<section class="chat" id="chat" role="dialog" aria-label="Chat with SKEEN">
+  <div class="chat-h"><span class="av" aria-hidden="true">SK<i>E</i></span><div><b>Chat with SKEEN</b><small><i></i>Our team replies in clinic hours</small></div><button class="chat-x" id="chatx" type="button" aria-label="Close chat">&times;</button></div>
+  <div class="chat-b" id="chatb" aria-live="polite"></div>
+  <div class="chat-chips" id="chatchips"></div>
+  <form class="chat-f" id="chatf"><label for="chatin" style="position:absolute;left:-9999px">Your message</label><input id="chatin" type="text" placeholder="Type a message" autocomplete="off"><button type="submit">Send</button></form>
+  <div class="chat-note">Concept only. Messages are not sent from this mockup.</div>
+</section>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mh">
+  <div class="box">
+    <div class="rec"><i></i> Film placeholder</div>
+    <h3 id="mh">Welcome in</h3>
+    <ul id="ml"></ul>
+    <button class="btn solid close" type="button" id="mclose">Close</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = ('IntersectionObserver' in window);
+
+  // reveals
+  var rv = document.querySelectorAll('.rv,.rvimg');
+  if (reduce || !io) rv.forEach(function(e){ e.classList.add('in'); });
+  else { var o = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); o.unobserve(x.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:.1}); rv.forEach(function(e){ o.observe(e); }); }
+
+  // count-up
+  function count(el){ var t=parseFloat(el.dataset.count), d=parseInt(el.dataset.dec||'0',10); if(reduce){ el.textContent=t.toFixed(d); return; } var s=null; function st(ts){ if(!s) s=ts; var p=Math.min(1,(ts-s)/1500); p=1-Math.pow(1-p,3); el.textContent=(t*p).toFixed(d); if(p<1) requestAnimationFrame(st); } requestAnimationFrame(st); }
+  document.querySelectorAll('[data-count]').forEach(function(el){ setTimeout(function(){ count(el); }, 1200); });
+
+  // header + mobile bar
+  var mbar = document.getElementById('mbar');
+  function onScroll(){ var y = window.scrollY; document.body.classList.toggle('scrolled', y > 60); mbar.classList.toggle('show', y > window.innerHeight * .6); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // journey
+  var steps = document.querySelectorAll('.step'), pics = document.querySelectorAll('.jpic img'), cnt = document.querySelector('.jpic .count'), bar = document.querySelector('.jpic .bar');
+  function setStep(n){ steps.forEach(function(s){ s.classList.toggle('on', s.dataset.step === n); }); pics.forEach(function(p){ p.classList.toggle('on', p.dataset.step === n); }); cnt.textContent = ('0' + n).slice(-2); bar.style.width = (parseInt(n,10) / steps.length * 100) + '%'; }
+  if (io && window.innerWidth > 860) { var jo = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting) setStep(x.target.dataset.step); }); },{rootMargin:'-45% 0px -45% 0px'}); steps.forEach(function(s){ jo.observe(s); }); }
+  else { setStep('1'); steps.forEach(function(s){ s.classList.add('on'); }); }
+
+  // tabs
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ tabs.forEach(function(x){ x.setAttribute('aria-selected', x === t ? 'true' : 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = (x !== t); }); });
+    t.addEventListener('keydown', function(e){ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){ var n = tabs[(i + (e.key==='ArrowRight'?1:tabs.length-1)) % tabs.length]; n.focus(); n.click(); } });
+  });
+
+  // check-in
+  var a = null, bar2 = document.getElementById('qbar'), qs = document.querySelectorAll('.qstep');
+  function show(n){ qs.forEach(function(q){ q.classList.toggle('on', q.dataset.q === String(n)); }); bar2.style.width = (n / 3 * 100) + '%'; }
+  bar2.style.width = '33%';
+  document.querySelectorAll('[data-a]').forEach(function(b){ b.addEventListener('click', function(){ a = b.dataset.a; show(2); }); });
+  var R = {
+    spot: ['Your first step', 'A full skin check', 'A calm, head-to-toe check with time to talk first, and 3D imaging if it suits you.'],
+    face: ['Your first step', 'A skin consultation', 'Your doctor looks at your skin, talks through what is bothering you, and explains the options that suit you.'],
+    cond: ['Your first step', 'A medical skin consultation', 'Time to talk through your skin history, a proper look, and a plan explained in plain words.'],
+    him:  ['Their first step', 'A full skin check, booked for them', 'Book the appointment in their name, and we will look after the rest.']
+  };
+  document.querySelectorAll('[data-b]').forEach(function(b){ b.addEventListener('click', function(){
+    var r = R[a || 'spot'];
+    document.getElementById('rtag').textContent = b.dataset.b === 'recent' && a === 'spot' ? 'Good news' : r[0];
+    document.getElementById('rhead').textContent = b.dataset.b === 'recent' && a === 'spot' ? 'Your next yearly check' : r[1];
+    document.getElementById('rbody').textContent = r[2];
+    show(3);
+  }); });
+
+  // film modal
+  var F = {
+    hero: ['Welcome in', ['Wide: the SKEEN door opens, a patient steps in', 'Dr Colin and Dr Ali greet her by name', 'Walk past the orchids and the green couch', 'A small, natural laugh in the corridor', '20 seconds, natural sound, no voiceover']],
+    ep1: ['Who we are', ['Each doctor, one sentence: who they are and where they trained', 'Filmed in the waiting room, warm light', 'Two to three minutes']],
+    ep2: ['Why we love this work', ['The patient moment that made them choose skin', 'What still gets them out of bed', 'Unscripted, one question at a time']],
+    ep3: ['What seeing us is like', ['Follow one visit from the door to the results', 'Show the talk-first moment', 'Plain words, no jargon']],
+    ep4: ['The machines, explained', ['One short film per machine', 'What it does, why it matters to you, how they use it', 'Never compare with other clinics']],
+    learn: ['What Dr Ali looks for', ['Sunspots, BCC, SCC and melanoma, in plain words', 'Calm tone, no scare tactics', '90 seconds']],
+    r1: ['Reel: a skin check, start to finish', ['Vertical, 30 to 45 seconds', 'Dr Ali on camera, patient back-of-shoulder only']],
+    r2: ['Reel: the 3D scan in 30 seconds', ['Vertical', 'Dr Colin plus a three-second countdown on screen']],
+    r3: ['Reel: sunspot or something else?', ['Vertical', 'Dr Ali explains the difference, general information only']],
+    r4: ['Reel: booking for someone you love', ['Vertical, warm and light', 'Both doctors explain how to book a check for a partner or parent']],
+    r5: ['Reel: a morning at SKEEN', ['Vertical, behind the scenes', 'Coffee, set-up, the first hello']],
+    r6: ['Reel: your questions, answered', ['Vertical, series format', 'Both doctors on the green couch, one question per reel']]
+  };
+  var modal = document.getElementById('modal');
+  document.querySelectorAll('[data-film]').forEach(function(b){ b.addEventListener('click', function(){ var f = F[b.dataset.film]; document.getElementById('mh').textContent = f[0]; document.getElementById('ml').innerHTML = f[1].map(function(x){ return '<li>' + x + '</li>'; }).join(''); modal.classList.add('on'); document.getElementById('mclose').focus(); }); });
+  function close(){ modal.classList.remove('on'); }
+  document.getElementById('mclose').addEventListener('click', close);
+  modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+})();
+</script>
+<script>window.__CHAT={"hello": "Hi, welcome to SKEEN. We can help with bookings and questions about your visit. What would you like to know?", "chips": [["Book a skin check", "You can book online in a minute: <a href=\"https://www.hotdoc.com.au/medical-centres/spring-hill-QLD-4000/skeen-clinic/doctors\" target=\"_blank\" rel=\"noopener\">book a skin check</a>. Or call us on <a href=\"tel:+61731885474\">(07) 3188 5474</a> and we will find a time that suits."], ["Do I need a referral?", "Dr Ali can see you with or without a GP referral. If you would like to see Dr Colin, call us and we will talk you through it."], ["What happens at a skin check?", "Your doctor talks with you first, then checks your skin head to toe. If it suits you, a 3D image of your skin takes about three seconds. Everything is explained before you leave."], ["Where do I park?", "Wilson Parking is in the same building. Come up to Level 1 of the Blue Building, 55 Little Edward Street, Spring Hill."], ["I am worried about a spot", "We cannot give medical advice here, but one of our doctors can take a proper look. The next step is booking a skin check. If it feels urgent, please call 000 or see your GP."], ["Booking for family too", "Of course. Book each person online, or call <a href=\"tel:+61731885474\">(07) 3188 5474</a> and we can help with times for everyone."]], "fallback": "Thanks for your message. On the live website our team replies here during clinic hours. For now, tap one of the questions below or call (07) 3188 5474."};</script>
+<script>
+(function(){
+  var body=document.body, btn=document.querySelector('.menubtn'), nav=document.getElementById('mnav');
+  function setMenu(on){ if(on&&nav){ var h=document.querySelector('header'); nav.style.paddingTop=Math.round(h.getBoundingClientRect().bottom+14)+'px'; } body.classList.toggle('menu-open',on); btn.setAttribute('aria-expanded',on?'true':'false'); btn.setAttribute('aria-label',on?'Close menu':'Open menu'); }
+  if(btn&&nav){ btn.addEventListener('click',function(){ setMenu(!body.classList.contains('menu-open')); }); nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); }); }
+  var C=window.__CHAT, chat=document.getElementById('chat'), log=document.getElementById('chatb'), chips=document.getElementById('chatchips'), form=document.getElementById('chatf'), input=document.getElementById('chatin'), started=false;
+  function add(html,who){ var d=document.createElement('div'); d.className='msg '+who; d.innerHTML=html; log.appendChild(d); log.scrollTop=log.scrollHeight; }
+  function reply(html){ var t=document.createElement('div'); t.className='typing'; t.innerHTML='<i></i><i></i><i></i>'; log.appendChild(t); log.scrollTop=log.scrollHeight; setTimeout(function(){ t.remove(); add(html,'them'); },900); }
+  function open(){ setMenu(false); chat.classList.add('on'); if(!started){ started=true; C.chips.forEach(function(c){ var b=document.createElement('button'); b.type='button'; b.className='chip-q'; b.textContent=c[0]; b.addEventListener('click',function(){ add(c[0],'me'); reply(c[1]); }); chips.appendChild(b); }); reply(C.hello); } }
+  function close(){ chat.classList.remove('on'); }
+  document.querySelectorAll('[data-chat]').forEach(function(b){ b.addEventListener('click',open); });
+  document.getElementById('chatx').addEventListener('click',close);
+  form.addEventListener('submit',function(e){ e.preventDefault(); var v=input.value.trim(); if(!v) return; add(v.replace(/&/g,'&amp;').replace(/</g,'&lt;'),'me'); input.value=''; reply(C.fallback); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ close(); setMenu(false); } });
+})();
+</script>
+</body>
+</html>
