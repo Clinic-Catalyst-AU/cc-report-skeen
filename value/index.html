@@ -109,6 +109,9 @@
     display:block;font-style:normal;font-family:var(--head);font-weight:800;font-size:10px;
     letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);
   }
+  .inc li .m em.pay{font-size:13px;letter-spacing:.04em;text-transform:none;color:var(--ink);white-space:normal}
+  .inc li.hero{background:var(--paper-2);padding:14px 14px 14px 26px;margin-bottom:6px}
+  .inc li.hero::before{left:10px;top:1.05em}
   .also{margin:20px 0 0;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
   .also b{font-weight:600;color:var(--ink)}
 
@@ -188,7 +191,7 @@
 
   @media (max-width:680px){
     .cols{grid-template-columns:1fr;gap:24px}
-    .inc li{grid-template-columns:minmax(0,1fr) 4.6rem;gap:0 10px}
+    .inc li{grid-template-columns:minmax(0,1fr) 5.2rem;gap:0 10px}
     .card{padding:22px 20px 20px}
   }
 </style>
@@ -205,33 +208,37 @@
 <div class="wrap">
 
   <section class="block">
-    <p class="band">Your website &middot; everything in it, and what each piece is worth</p>
+    <p class="band">Inside your onboarding &middot; and what each piece is worth</p>
     <div class="cols">
       <ul class="inc">
-        <li><span class="t"><b>Both sites, designed and built.</b> Twenty-six pages, the premium build of the design you have seen. Skin checks and skin cancer care on one, skin and cosmetic medicine on the other, linked so patients cross between the two. Built for the phone first and fast on one bar of reception.</span><span class="m"><s>$5,500</s><em>included</em></span></li>
-        <li><span class="t"><b>Every page written.</b> Twenty-six pages of copy, warm enough to take the fear out, then checked line by line against the advertising rules.</span><span class="m"><s>$1,500</s><em>included</em></span></li>
-        <li><span class="t"><b>Meta tags, page titles and keyword mapping.</b> Every page mapped to a real search before a word is written, and titles that say what the page is and where you are.</span><span class="m"><s>$1,000</s><em>included</em></span></li>
-        <li><span class="t"><b>The pixel installed and firing.</b> Conversion tracking connected from day one, so every enquiry can be traced back to what created it.</span><span class="m"><s>$1,000</s><em>included</em></span></li>
-        <li><span class="t"><b>SEO and GEO optimised.</b> Structured data so Google and the AI assistants can quote SKEEN when someone asks where to get a skin check in Brisbane.</span><span class="m"><s>$750</s><em>included</em></span></li>
-        <li><span class="t"><b>The 30-second check-in.</b> A short, warm set of questions that turns an anonymous visitor into a named enquiry with the concern already known.</span><span class="m"><s>$750</s><em>included</em></span></li>
-        <li><span class="t"><b>Booking connected, films placed.</b> Real booking behind every Book button, and the doctor films set into the pages they were shot for.</span><span class="m"><s>$500</s><em>included</em></span></li>
-        <li><span class="t"><b>Your Instagram and Facebook overhaul.</b> Both profiles rebuilt to match the site, so the people who check you before booking find the same clinic.</span><span class="m"><s>$2,000</s><em>included</em></span></li>
+        <li class="hero"><span class="t"><b>The website, valued on its own.</b> Both sites designed and built, 26 pages, the premium build of the design you have seen. Every page written and compliance checked, meta tags and page titles, the pixel installed and conversion tracking connected, SEO and GEO optimised, the 30-second check-in, and booking connected with the doctor films placed.</span><span class="m"><s>$22,000</s><em class="pay">you pay $7,500</em></span></li>
+        <li><span class="t"><b>AIOS installed and run for you.</b> The AI system that does the repetitive work your team is doing by hand. You do not operate it, we do.</span><span class="m"><s>$10,000</s><em>included</em></span></li>
+        <li><span class="t"><b>GoHighLevel built, with your AI and voice agents trained.</b> Enquiries, messages and calls landing in one place and answered in your words.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Two Google Search campaigns, built and launched.</b> Seven ad groups across skin checks, skin cancer, imaging, removals and the cosmetic concerns.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Two Meta campaigns, built and launched.</b> One for each offer, with audience research, an ad set of 15 ads, retargeting and its own landing page.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Strategy and positioning.</b> What SKEEN is known for, how the two sides speak to each other, and the compliance boundaries every word sits inside.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Filming, editing and delivery.</b> Both doctors and the clinic, cut twice: long calm films for the sites, fast vertical edits for socials and ads.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Conversion analysis and optimisation.</b> Every campaign and touchpoint reviewed and improved while it runs, so the month ends stronger than it starts.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
         <li><span class="t"><b>A month of content, scheduled.</b> Cut from the filming and loaded ready to post, so the socials are alive the day the site goes live.</span><span class="m"><s>$2,500</s><em>included</em></span></li>
-        <li><span class="t"><b>GoHighLevel built, with your AI and voice agents trained.</b> Your enquiries, messages and calls landing in one place, answered in your words.</span><span class="m"><s>$5,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Your Instagram and Facebook overhaul.</b> Both profiles rebuilt to match the site, so the people who check you before booking find the same clinic.</span><span class="m"><s>$2,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Your Business Brain, written.</b> Your services, your tone, your answers and your boundaries written down once, so every AI touchpoint speaks as SKEEN.</span><span class="m"><s>$2,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Patient reactivation nurture.</b> A warm sequence to the patients already in your database who are overdue, which is the quietest revenue in the practice.</span><span class="m"><s>$2,000</s><em>included</em></span></li>
+        <li><span class="t"><b>Financial dashboard.</b> Your CRM, payment gateway and accounting connected into one view.</span><span class="m"><s>$2,000</s><em>included</em></span></li>
         <li><span class="t"><b>AI answering inside your CRM.</b> Day or night, so nobody waits until morning for an answer.</span><span class="m"><s>$1,500</s><em>included</em></span></li>
+        <li><span class="t"><b>Monthly educational newsletters.</b> Written in your voice and loaded ready to send.</span><span class="m"><s>$1,500</s><em>included</em></span></li>
       </ul>
       <div class="card">
-        <p class="was">The website, valued on its own</p>
-        <p class="old">$22,000</p>
-        <p class="now">You pay</p>
-        <p class="fig">$7,500<small>once &middot; including GST</small></p>
+        <p class="was">All of it, bought piece by piece</p>
+        <p class="old">$75,500</p>
+        <p class="now">Your onboarding fee</p>
+        <p class="fig">$22,000<small>once &middot; including GST</small></p>
       </div>
     </div>
 
     <div class="allin">
-      <p class="l">Why it is $7,500 and not $5,000</p>
-      <p>A website on its own is a brochure. This one is a piece of the system: the pixel firing, the tracking connected, the search and AI search work built into every page, and the check-in dropping named enquiries straight into your CRM to be answered. That is why it is $7,500 rather than the price of a plain site, and why every line above is worth $22,000 bought on its own.</p>
-      <p style="margin-top:12px">Our onboarding fee is $22,000, and this website is part of what that covers. You are paying $7,500 for it, once, including GST. No page-by-page pricing, no extras to approve later, and nothing held back for a second invoice. It goes live in SKEEN's name and it is yours.</p>
+      <p class="l">It is not just a website</p>
+      <p>The website on its own is worth the whole onboarding fee, and you are paying $7,500 for it. That is more than a website costs because it is not one: it is a piece of the system, with the pixel firing, the tracking connected, the search and AI search work built into every page, and the check-in dropping named enquiries straight into your CRM to be answered.</p>
+      <p style="margin-top:12px">Everything else on this list comes with it inside the $22,000, paid once, including GST. Nothing here is billed separately and nothing is held back for a second invoice. It all goes live in SKEEN's name and it is yours.</p>
     </div>
   </section>
 
