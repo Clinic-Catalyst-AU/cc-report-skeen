@@ -66,6 +66,24 @@
   }
   .top p.sub{margin:0;color:rgba(255,255,255,.82);max-width:54ch;font-size:16.5px}
 
+  /* ---- summary strip ---- */
+  .snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1px;background:var(--dark);margin-top:30px}
+  .snap div{background:var(--paper);padding:22px 22px 20px}
+  .snap .k{
+    font-family:var(--head);font-weight:800;font-size:10.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--teal-dark);margin:0 0 12px;
+  }
+  .snap .pair{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:5px 0}
+  .snap .pair span:first-child{font-size:14px;color:var(--mute)}
+  .snap .pair span:last-child{
+    font-family:var(--head);font-weight:700;font-size:17px;font-variant-numeric:tabular-nums;
+    white-space:nowrap;color:var(--ink-2);
+  }
+  .snap .pair.big{border-top:1px solid var(--line);margin-top:6px;padding-top:12px}
+  .snap .pair.big span:first-child{color:var(--ink);font-family:var(--head);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .snap .pair.big span:last-child{font-size:26px;font-weight:800;color:var(--ink)}
+  .snap .pair.big span:last-child em{font-style:normal;font-size:.45em;font-weight:600;color:var(--teal-dark);margin-left:6px}
+
   /* ---- table ---- */
   main{padding-block:40px 0}
   .hdr{
@@ -241,11 +259,24 @@
     <img src="cc-wordmark.png" alt="Clinic Catalyst">
     <p class="for">SKEEN Clinic</p>
     <h1>Value breakdown</h1>
-    <p class="sub">Everything in the build and everything that runs every month after it, what each piece is worth on its own, and what you are actually charged.</p>
+    <p class="sub">The $22,000 to sign on covers all of it, website included. There is no separate website invoice. Here is every piece you get, what each one is worth on its own, and what you are actually charged.</p>
   </div>
 </header>
 
 <main class="wrap">
+
+  <div class="snap">
+    <div>
+      <p class="k">To sign on, one off</p>
+      <div class="pair"><span>What it is worth</span><span>$72,000</span></div>
+      <div class="pair big"><span>You pay</span><span>$22,000<em>ex GST</em></span></div>
+    </div>
+    <div>
+      <p class="k">Then every month</p>
+      <div class="pair"><span>What it is worth</span><span>$15,900</span></div>
+      <div class="pair big"><span>You pay</span><span>$6,899<em>ex GST</em></span></div>
+    </div>
+  </div>
 
   <div class="hdr"><span>What you are getting</span><span>Value</span></div>
 
@@ -341,7 +372,7 @@
   <div class="pay">
     <p class="l">What you are charged &middot; the build</p>
     <p class="f">$22,000<span>ex GST</span></p>
-    <p class="note">The Premium build, one off. Everything on this page, installed together in the first 30 days. Campaign set up across Google and Meta is $3,500 ex GST on top.</p>
+    <p class="note">One payment to sign on, and the website is part of it. Every piece listed above is built, launched and handed over in the first 30 days. Campaign set up across Google and Meta is $3,500 ex GST on top, as quoted.</p>
     <p class="note">Ad spend is separate, billed by Google and Meta to your own account, never through us. Domain, hosting and any third-party subscriptions stay in SKEEN's name.</p>
   </div>
 
