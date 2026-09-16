@@ -138,6 +138,29 @@
   .flag p:last-child{margin:0}
   .flag .amt{font-family:var(--head);font-weight:800;color:var(--ink)}
 
+  .look{
+    margin-top:30px;border:2px solid var(--dark);padding:22px 22px 20px;background:var(--paper);
+  }
+  .look h2{
+    font-family:var(--head);font-weight:800;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--teal-dark);margin:0 0 6px;
+  }
+  .look p.s{margin:0 0 16px;font-size:15px;color:var(--mute)}
+  .look a{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:14px 0;border-top:1px solid var(--line);
+    color:var(--ink);text-decoration:none;font-size:15.5px;
+  }
+  .look a:last-child{border-bottom:1px solid var(--line)}
+  .look a b{font-family:var(--head);font-weight:700;font-size:15px;display:block}
+  .look a span.t{color:var(--mute);font-size:14.5px;display:block;margin-top:2px}
+  .look a span.go{
+    font-family:var(--head);font-weight:800;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--teal-dark);white-space:nowrap;
+  }
+  .look a:hover span.go,.look a:focus-visible span.go{color:var(--ink)}
+  .look a:focus-visible{outline:2px solid var(--teal-mid);outline-offset:2px}
+
   footer{padding-block:34px 56px;color:var(--mute);font-size:13px}
   footer p{margin:0}
 
@@ -194,6 +217,19 @@
       <p class="note">The website by itself is worth the whole sign-on fee. <b>You are not paying $22,000 for a website.</b> You are paying it for everything in the list above, and the website is one part of that.</p>
     </div>
   </section>
+
+  <div class="look">
+    <h2>Have a look at it working</h2>
+    <p class="s">Two short pages, no login needed.</p>
+    <a href="https://clinic-catalyst-au.github.io/workshop-toolkit/cc-aios-explained.html">
+      <span><b>What AIOS actually does</b><span class="t">The AI system, explained without the jargon</span></span>
+      <span class="go">Open &rarr;</span>
+    </a>
+    <a href="https://clinic-catalyst-au.github.io/skill-library/">
+      <span><b>The skill library</b><span class="t">Every job the system can do for a clinic, with demos</span></span>
+      <span class="go">Open &rarr;</span>
+    </a>
+  </div>
 
   <section class="block">
     <p class="band">Then every month &middot; run by us</p>
